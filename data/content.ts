@@ -7,30 +7,10 @@ export const heroContent = {
 };
 
 export const skills = {
-  frontend: [
-    { name: 'React', level: 95 },
-    { name: 'Next.js', level: 96 },
-    { name: 'Angular', level: 85 },
-    { name: 'React Native', level: 75 },
-  ],
-  backend: [
-    { name: 'Node.js', level: 95 },
-    { name: 'Nest.js', level: 95 },
-    { name: 'Express.js', level: 95 },
-    { name: 'Go', level: 50 },
-  ],
-  databases: [
-    { name: 'MongoDB', level: 90 },
-    { name: 'PostgreSQL', level: 90 },
-    { name: 'Redis', level: 90 },
-    { name: 'DynamoDB', level: 80 },
-  ],
-  cloudDevops: [
-    { name: 'Docker', level: 90 },
-    { name: 'CI/CD', level: 85 },
-    { name: 'AWS', level: 85 },
-    { name: 'GCP', level: 75 },
-  ],
+  frontend: ['React', 'Next.js', 'Angular', 'React Native'],
+  backend: ['Node.js', 'Nest.js', 'Express.js', 'Go'],
+  databases: ['MongoDB', 'PostgreSQL', 'Redis', 'DynamoDB'],
+  cloudDevops: ['Docker', 'CI/CD', 'AWS', 'GCP'],
 };
 
 export const experience = [

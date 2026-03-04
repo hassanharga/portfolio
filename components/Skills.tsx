@@ -37,24 +37,15 @@ export default function Skills() {
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
               className="bg-[#141414] rounded-xl p-6 border border-[#262626]"
             >
-              <h3 className="text-xl font-semibold text-white mb-6">{category.title}</h3>
-              <div className="space-y-4">
-                {category.data.map((skill, skillIndex) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-[#a3a3a3]">{skill.name}</span>
-                      <span className="text-[#737373]">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-[#1f1f1f] rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                        className="h-full bg-linear-to-r from-[#3b82f6] to-[#60a5fa] rounded-full"
-                      />
-                    </div>
-                  </div>
+              <h3 className="text-xl font-semibold text-white mb-4">{category.title}</h3>
+              <div className="flex flex-wrap gap-2">
+                {category.data.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 bg-[#1f1f1f] text-[#a3a3a3] rounded-lg text-sm border border-[#262626] hover:border-[#3b82f6] hover:text-[#3b82f6] transition-colors"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </motion.div>
