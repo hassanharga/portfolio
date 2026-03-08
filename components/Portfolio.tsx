@@ -33,7 +33,13 @@ export default function Portfolio() {
               <div className="relative h-48 bg-linear-to-br from-[#1f1f1f] to-[#141414] overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   {project.image ? (
-                    <Image src={project.image} fill style={{ objectFit: 'cover' }} alt="project image" />
+                    <Image
+                      loading="lazy"
+                      src={project.image}
+                      fill
+                      alt="project image"
+                      sizes="(max-width: 768px) 100vw"
+                    />
                   ) : (
                     <svg className="w-16 h-16 text-[#262626]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
@@ -45,8 +51,6 @@ export default function Portfolio() {
                     </svg>
                   )}
                 </div>
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-[#3b82f6]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Project Info */}
