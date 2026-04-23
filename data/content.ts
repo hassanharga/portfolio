@@ -300,7 +300,15 @@ export const contact = {
   location: 'Egypt',
   linkedin: 'https://linkedin.com/in/hassanharga',
   github: 'https://github.com/hassanharga',
+  whatsapp: {
+    message: 'Hi Hassan, I came across your portfolio and would like to discuss a project.',
+  },
 };
+
+export function getWhatsAppUrl() {
+  const phone = contact.phone.replace('+', '');
+  return `https://wa.me/${phone}?text=${encodeURIComponent(contact.whatsapp.message)}`;
+}
 
 export const navLinks = [
   { name: 'Home', href: '#home' },
