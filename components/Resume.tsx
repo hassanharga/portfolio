@@ -1,131 +1,80 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { experience, education, yearOfExperience } from '@/data/content';
+import { education, experience, yearOfExperience } from '@/data/content';
+import { revealUp, staggerContainer } from './animations';
 
 export default function Resume() {
   return (
-    <section id="resume" className="py-20 px-4 bg-[#0d0d0d]">
-      <div className="max-w-6xl mx-auto">
+    <section id="resume" className="bg-[var(--background-raised)] px-4 py-24 sm:px-6">
+      <div className="mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={revealUp}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-14 grid gap-6 lg:grid-cols-[0.7fr_1fr]"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Resume</h2>
-          <p className="text-[#737373] max-w-2xl mx-auto">
-            My professional journey over the past {yearOfExperience}+ years
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.18em] text-[var(--primary)]">Experience</p>
+            <h2 className="text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">{yearOfExperience}+ years of delivery</h2>
+          </div>
+          <p className="max-w-2xl text-base leading-8 text-[var(--muted-strong)] lg:pt-10">
+            A backend-leaning full stack path across startups, agencies, telecom, and marketplace products.
           </p>
         </motion.div>
 
-        {/* Experience */}
-        <div className="mb-16">
-          <motion.h3
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl font-semibold text-white mb-8 flex items-center gap-3"
-          >
-            <svg className="w-6 h-6 text-[#3b82f6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
-            </svg>
-            Experience
-          </motion.h3>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          className="divide-y divide-[var(--border)] border-y border-[var(--border)]"
+        >
+          {experience.map((exp) => (
+            <motion.article
+              key={exp.id}
+              variants={revealUp}
+              className="grid gap-5 py-8 lg:grid-cols-[0.85fr_1.15fr]"
+            >
+              <div>
+                <p className="text-sm font-medium text-[var(--primary)]">{exp.period}</p>
+                <h3 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">{exp.role}</h3>
+                <p className="mt-2 text-sm text-[var(--muted)]">
+                  {exp.company} · {exp.location}
+                </p>
+              </div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-[#262626]" />
+              <ul className="space-y-3">
+                {exp.description.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm leading-7 text-[var(--muted-strong)]">
+                    <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--primary)]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.article>
+          ))}
+        </motion.div>
 
-            {experience.map((exp, index) => (
-              <motion.div
-                key={exp.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative flex flex-col md:flex-row gap-4 md:gap-8 mb-8 ${
-                  index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-3 h-3 bg-[#3b82f6] rounded-full border-2 border-[#0a0a0a] z-10" />
-
-                {/* Content */}
-                <div className={`flex-1 pl-8 md:pl-0 ${index % 2 === 1 ? 'md:pr-8' : 'md:pl-8'}`}>
-                  <div className="bg-[#141414] rounded-xl p-6 border border-[#262626] hover:border-[#3b82f6]/50 transition-colors">
-                    <span className="text-[#3b82f6] text-sm font-medium">{exp.period}</span>
-                    <h4 className="text-lg font-semibold text-white mt-2">{exp.role}</h4>
-                    <p className="text-[#737373] text-sm mt-1">
-                      {exp.company} - {exp.location}
-                    </p>
-                    <ul className="mt-4 space-y-2">
-                      {exp.description.map((item, i) => (
-                        <li key={i} className={`text-[#a3a3a3] text-sm flex items-start gap-2 `}>
-                          <span className="text-[#3b82f6]">•</span>
-                          <span className="text-start">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Empty space for alignment */}
-                <div className="flex-1 hidden md:block" />
-              </motion.div>
+        <motion.div
+          variants={revealUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-14"
+        >
+          <h3 className="text-2xl font-semibold text-[var(--foreground)]">Education</h3>
+          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
+            {education.map((edu) => (
+              <div key={`${edu.degree}-${edu.school}`} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6">
+                <p className="text-sm font-medium text-[var(--primary)]">{edu.period}</p>
+                <h4 className="mt-2 text-lg font-semibold text-[var(--foreground)]">{edu.degree}</h4>
+                <p className="mt-1 text-sm text-[var(--muted)]">{edu.school}</p>
+              </div>
             ))}
           </div>
-        </div>
-
-        {/* Education */}
-        <div>
-          <motion.h3
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl font-semibold text-white mb-8 flex items-center gap-3"
-          >
-            <svg className="w-6 h-6 text-[#3b82f6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              />
-            </svg>
-            Education
-          </motion.h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {education.map((edu, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-[#141414] rounded-xl p-6 border border-[#262626] hover:border-[#3b82f6]/50 transition-colors"
-              >
-                <span className="text-[#3b82f6] text-sm font-medium">{edu.period}</span>
-                <h4 className="text-lg font-semibold text-white mt-2">{edu.degree}</h4>
-                <p className="text-[#737373] text-sm mt-1">{edu.school}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

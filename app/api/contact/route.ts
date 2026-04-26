@@ -4,15 +4,37 @@ import { contact } from '@/data/content';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req: Request) {
-  const { name, email, message } = await req.json();
+function escapeHtml(value: string) {
+  return value.replace(/[&<>"']/g, (char) => {
+    const entities: Record<string, string> = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    };
 
-  await resend.emails.send({
-    from: 'onboarding@resend.dev',
-    to: contact.email,
-    subject: `Contact from ${name}`,
-    html: `<p><strong>From:</strong> ${email}</p><p>${message}</p>`,
+    return entities[char];
   });
+}
 
-  return NextResponse.json({ success: true });
+export async function POST(req: Request) {
+  try {
+    const { name, email, message } = await req.json();
+
+    if (!name || !email || !message) {
+      return NextResponse.json({ success: false, error: 'Missing required fields' }, { status: 400 });
+    }
+
+    await resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: contact.email,
+      subject: `Contact from ${name}`,
+      html: `<p><strong>From:</strong> ${escapeHtml(email)}</p><p>${escapeHtml(message)}</p>`,
+    });
+
+    return NextResponse.json({ success: true });
+  } catch {
+    return NextResponse.json({ success: false, error: 'Unable to send message' }, { status: 500 });
+  }
 }

@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { services } from '@/data/content';
+import { revealUp, staggerContainer } from './animations';
 
 const icons: Record<string, React.ReactNode> = {
   globe: (
@@ -49,39 +50,45 @@ const icons: Record<string, React.ReactNode> = {
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 px-4 bg-[#0d0d0d]">
-      <div className="max-w-6xl mx-auto">
+    <section id="services" className="bg-[var(--background-raised)] px-4 py-24 sm:px-6">
+      <div className="mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={revealUp}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-14 max-w-3xl"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Services</h2>
-          <p className="text-[#737373] max-w-2xl mx-auto">How I can help bring your ideas to life</p>
+          <p className="mb-3 text-sm uppercase tracking-[0.18em] text-[var(--primary)]">What I can own</p>
+          <h2 className="text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">Senior engineering outcomes</h2>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--muted-strong)]">
+            Useful for teams that need someone who can move across product UI, API design, deployment, and codebase quality without losing delivery speed.
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          className="grid grid-cols-1 gap-5 md:grid-cols-3"
+        >
+          {services.map((service) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-[#141414] rounded-xl p-6 border border-[#262626] hover:border-[#3b82f6]/50 transition-all duration-300"
+              variants={revealUp}
+              className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 transition-colors hover:border-[var(--primary)]/70"
             >
-              <div className="text-[#3b82f6] mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-6 text-[var(--primary)] transition-transform duration-300 group-hover:-translate-y-1">
                 {icons[service.icon]}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-[#3b82f6] transition-colors">
+              <h3 className="text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
                 {service.title}
               </h3>
-              <p className="text-[#737373] leading-relaxed">{service.description}</p>
+              <p className="mt-4 text-sm leading-7 text-[var(--muted)]">{service.description}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

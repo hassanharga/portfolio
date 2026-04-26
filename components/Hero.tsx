@@ -1,174 +1,120 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { contact, heroContent } from '@/data/content';
 import Image from 'next/image';
+import { heroContent } from '@/data/content';
+import { revealTransition, revealUp, staggerContainer } from './animations';
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16 px-4">
-      <div className="max-w-4xl mx-auto text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+    <section id="home" className="relative min-h-screen overflow-hidden px-4 pt-28 sm:px-6 lg:pt-32">
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[var(--primary)]/40 to-transparent" />
+      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="max-w-3xl"
+        >
           <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="inline-block px-4 py-2 rounded-full bg-[#1f1f1f] text-[#3b82f6] text-sm mb-6"
+            variants={revealUp}
+            className="mb-6 inline-flex rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--accent)]"
           >
-            Available for new opportunities
+            Available for senior full stack and backend roles
           </motion.span>
 
-          <Image
-            src="/images/avatar.png"
-            alt="avatar"
-            loading="eager"
-            width={250}
-            height={250}
-            className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover aspect-square mx-auto"
-          />
-
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4"
+            variants={revealUp}
+            className="max-w-4xl text-4xl font-semibold leading-[1.05] text-[var(--foreground)] sm:text-6xl lg:text-7xl"
           >
-            Hi, I&apos;m <span className="text-[#3b82f6]">{heroContent.name}</span>
+            {heroContent.name} builds product systems that survive real traffic.
           </motion.h1>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-xl sm:text-2xl text-[#737373] mb-6"
+            variants={revealUp}
+            className="mt-6 text-xl font-medium text-[var(--primary)] sm:text-2xl"
           >
             {heroContent.title}
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="text-[#a3a3a3] text-lg max-w-2xl mx-auto mb-8 leading-relaxed"
+            variants={revealUp}
+            className="mt-5 max-w-2xl text-base leading-8 text-[var(--muted-strong)] sm:text-lg"
           >
             {heroContent.bio}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-wrap items-center justify-center gap-4"
+            variants={revealUp}
+            className="mt-8 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3"
           >
-            <motion.a
-              href="#contact"
-              className="px-6 py-3 bg-[#3b82f6] hover:bg-[#2563eb] text-white rounded-lg font-medium transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get in Touch
-            </motion.a>
-            <motion.a
-              href="#portfolio"
-              className="px-6 py-3 border border-[#262626] hover:border-[#3b82f6] text-white rounded-lg font-medium transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View Work
-            </motion.a>
+            {heroContent.proofPoints.map((point) => (
+              <div key={point} className="border-t border-[var(--border)] pt-3 text-sm text-[var(--muted)]">
+                <span className="text-[var(--foreground)]">{point}</span>
+              </div>
+            ))}
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
+            variants={revealUp}
+            className="mt-10 flex flex-wrap items-center gap-4"
           >
-            {/* Phones row */}
-            <div className="flex items-center justify-center gap-4">
-              <a
-                href={`tel:${contact.phone}`}
-                className="text-[#737373] hover:text-[#3b82f6] transition-colors flex items-center gap-2"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                <span className="text-sm">{contact.phone}</span>
-              </a>
-              <a
-                href={`tel:${contact.secondPhone}`}
-                className="text-[#737373] hover:text-[#3b82f6] transition-colors flex items-center gap-2"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                <span className="text-sm">{contact.secondPhone}</span>
-              </a>
-            </div>
-            {/* Social icons row */}
-            <div className="flex items-center justify-center gap-4">
-              <a
-                href={contact.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#737373] hover:text-[#3b82f6] transition-colors"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </a>
-              <a
-                href={contact.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#737373] hover:text-[#3b82f6] transition-colors"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-              </a>
-              <a
-                href={`mailto:${contact.email}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#737373] hover:text-[#3b82f6] transition-colors"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-              </a>
-            </div>
+            <motion.a
+              href="#contact"
+              className="rounded-lg bg-[var(--primary)] px-6 py-3 font-medium text-[var(--background)] transition-colors hover:bg-[var(--accent)]"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Contact Hassan
+            </motion.a>
+            <motion.a
+              href="#portfolio"
+              className="rounded-lg border border-[var(--border-strong)] px-6 py-3 font-medium text-[var(--foreground)] transition-colors hover:border-[var(--primary)] hover:text-[var(--primary)]"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Review projects
+            </motion.a>
           </motion.div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0, scale: 0.96, filter: 'blur(12px)' }}
+          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          transition={{ ...revealTransition, delay: 0.28 }}
+          className="relative mx-auto w-full max-w-sm lg:mr-0"
         >
-          <a href="#skills" className="text-[#737373] animate-bounce block">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-            </svg>
-          </a>
+          <div className="absolute -inset-4 rounded-[2rem] border border-[var(--border)]" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-[var(--border-strong)] bg-[var(--surface)]">
+            <Image
+              src="/images/avatar.png"
+              alt="Hassan Mohamed"
+              loading="eager"
+              width={520}
+              height={620}
+              className="aspect-[4/5] w-full object-cover"
+              priority
+            />
+            <div className="border-t border-[var(--border)] bg-[var(--background-raised)] p-5">
+              <p className="text-sm uppercase tracking-[0.18em] text-[var(--muted)]">Current focus</p>
+              <p className="mt-2 text-lg font-medium text-[var(--foreground)]">Full stack product engineering</p>
+            </div>
+          </div>
         </motion.div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 sm:block"
+      >
+        <a href="#skills" className="block text-[var(--muted)] transition-colors hover:text-[var(--primary)]">
+          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </a>
+      </motion.div>
     </section>
   );
 }

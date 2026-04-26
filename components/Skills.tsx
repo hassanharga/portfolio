@@ -2,47 +2,53 @@
 
 import { motion } from 'framer-motion';
 import { skills } from '@/data/content';
+import { revealUp, staggerContainer } from './animations';
 
 const skillCategories = [
-  { key: 'frontend', title: 'Frontend', data: skills.frontend },
-  { key: 'backend', title: 'Backend', data: skills.backend },
-  { key: 'databases', title: 'Databases', data: skills.databases },
-  { key: 'cloudDevops', title: 'Cloud & DevOps', data: skills.cloudDevops },
+  { key: 'productEngineering', data: skills.productEngineering },
+  { key: 'backendSystems', data: skills.backendSystems },
+  { key: 'dataInfrastructure', data: skills.dataInfrastructure },
+  { key: 'engineeringLeadership', data: skills.engineeringLeadership },
 ] as const;
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="px-4 py-24 sm:px-6">
+      <div className="mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={revealUp}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-14 max-w-3xl"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Skills & Technologies</h2>
-          <p className="text-[#737373] max-w-2xl mx-auto">
-            Technologies I work with to build modern, scalable applications
+          <p className="mb-3 text-sm uppercase tracking-[0.18em] text-[var(--primary)]">Capabilities</p>
+          <h2 className="text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">Where I create leverage</h2>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--muted-strong)]">
+            Recruiters and teams usually need more than a tool list. These are the practical areas where my stack shows up in production.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          className="grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-2"
+        >
+          {skillCategories.map((category) => (
             <motion.div
               key={category.key}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              className="bg-[#141414] rounded-xl p-6 border border-[#262626]"
+              variants={revealUp}
+              className="border-t border-[var(--border)] pt-6"
             >
-              <h3 className="text-xl font-semibold text-white mb-4">{category.title}</h3>
-              <div className="flex flex-wrap gap-2">
-                {category.data.map((skill) => (
+              <h3 className="text-xl font-semibold text-[var(--foreground)]">{category.data.title}</h3>
+              <p className="mt-3 min-h-14 text-sm leading-7 text-[var(--muted)]">{category.data.summary}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {category.data.items.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 bg-[#1f1f1f] text-[#a3a3a3] rounded-lg text-sm border border-[#262626] hover:border-[#3b82f6] hover:text-[#3b82f6] transition-colors"
+                    className="rounded-md border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-sm text-[var(--muted-strong)] transition-colors hover:border-[var(--primary)] hover:text-[var(--primary)]"
                   >
                     {skill}
                   </span>
@@ -50,7 +56,7 @@ export default function Skills() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

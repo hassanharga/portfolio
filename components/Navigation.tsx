@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navLinks } from '@/data/content';
+import { revealTransition } from './animations';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,15 +19,21 @@ export default function Navigation() {
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      initial={{ y: -72, opacity: 0, filter: 'blur(8px)' }}
+      animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+      transition={revealTransition}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#262626]' : ''
+        isScrolled ? 'border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-md' : ''
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          <motion.a href="#home" className="text-xl font-bold text-white" whileHover={{ scale: 1.05 }}>
+          <motion.a
+            href="#home"
+            className="rounded-md border border-[var(--border-strong)] px-3 py-1.5 text-sm font-bold text-[var(--foreground)] transition-colors hover:border-[var(--primary)] hover:text-[var(--primary)]"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.96 }}
+          >
             HM
           </motion.a>
 
@@ -36,7 +43,7 @@ export default function Navigation() {
               <motion.a
                 key={link.name}
                 href={link.href}
-                className="text-[#737373] hover:text-white transition-colors text-sm"
+                className="text-sm text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
                 whileHover={{ y: -2 }}
               >
                 {link.name}
@@ -45,7 +52,12 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-white p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button
+            className="p-2 text-[var(--foreground)] md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMobileMenuOpen}
+          >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -64,14 +76,14 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#0a0a0a] border-b border-[#262626]"
+            className="border-b border-[var(--border)] bg-[var(--background)] md:hidden"
           >
             <div className="px-4 py-4 space-y-3">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block text-[#737373] hover:text-white transition-colors py-2"
+                  className="block py-2 text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
