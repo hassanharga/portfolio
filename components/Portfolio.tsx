@@ -20,7 +20,7 @@ export default function Portfolio() {
         >
           <div>
             <p className="mb-3 text-sm uppercase tracking-[0.18em] text-[var(--primary)]">Selected work</p>
-            <h2 className="text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">Proof over templates</h2>
+            <h2 className="font-display text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">Proof over templates</h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-[var(--muted-strong)] lg:pt-10">
             A focused sample of product and platform work across mobility, telecom, tourism, commerce, and backend API design.
@@ -66,7 +66,7 @@ export default function Portfolio() {
 
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
+                    <h3 className="font-display text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
                       {project.title}
                     </h3>
                     {project.featured && (

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-05T00:00:00Z",
+  "title": "Design System: Hassan Mohamed Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "amber-ember": { "role": "primary", "displayName": "Amber Ember", "canonical": "oklch(80% 0.15 72)", "tonalRamp": ["oklch(22% 0.06 72)", "oklch(32% 0.09 72)", "oklch(44% 0.12 72)", "oklch(56% 0.14 72)", "oklch(68% 0.15 72)", "oklch(80% 0.15 72)", "oklch(88% 0.1 78)", "oklch(95% 0.05 85)"] },
+      "warm-cream": { "role": "secondary", "displayName": "Warm Cream", "canonical": "oklch(86% 0.085 88)", "tonalRamp": ["oklch(28% 0.04 88)", "oklch(40% 0.05 88)", "oklch(52% 0.06 88)", "oklch(64% 0.07 88)", "oklch(75% 0.08 88)", "oklch(86% 0.085 88)", "oklch(92% 0.05 88)", "oklch(97% 0.02 88)"] },
+      "ink-black": { "role": "neutral", "displayName": "Ink Black", "canonical": "oklch(15% 0.012 70)", "tonalRamp": ["oklch(15% 0.012 70)", "oklch(18.5% 0.015 70)", "oklch(20.5% 0.015 70)", "oklch(24% 0.017 70)", "oklch(30% 0.015 70)", "oklch(41% 0.022 70)", "oklch(64% 0.014 75)", "oklch(95% 0.01 85)"] },
+      "paper-white": { "role": "neutral", "displayName": "Paper White", "canonical": "oklch(95% 0.01 85)", "tonalRamp": ["oklch(20% 0.012 80)", "oklch(32% 0.012 80)", "oklch(48% 0.012 80)", "oklch(64% 0.014 75)", "oklch(79% 0.012 80)", "oklch(88% 0.011 82)", "oklch(95% 0.01 85)", "oklch(98% 0.006 85)"] },
+      "signal-green": { "role": "tertiary", "displayName": "Signal Green", "canonical": "oklch(74% 0.15 150)", "tonalRamp": ["oklch(24% 0.06 150)", "oklch(36% 0.09 150)", "oklch(48% 0.12 150)", "oklch(60% 0.14 150)", "oklch(74% 0.15 150)", "oklch(83% 0.12 150)", "oklch(90% 0.08 150)", "oklch(96% 0.04 150)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only, one per page. Bricolage Grotesque, tight tracking." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles." },
+      "title": { "displayName": "Title", "purpose": "Card, list-item, role, and project titles." },
+      "body": { "displayName": "Body", "purpose": "Paragraphs and descriptions, Inter, 65-75ch measure." },
+      "label": { "displayName": "Label / Eyebrow", "purpose": "Uppercase amber kicker above section titles." }
+    },
+    "shadows": [
+      { "name": "ambient-amber-glow", "value": "filter: blur(48px); background: oklch(80% 0.15 72); opacity: 0.12", "purpose": "Atmospheric glow behind the signature panel and at the page top. Never structural." }
+    ],
+    "motion": [
+      { "name": "ease-out-quint", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default reveal and transition easing. No bounce, no elastic." },
+      { "name": "reveal-up", "value": "opacity 0->1, translateY 28px->0, blur 10px->0 over 0.65s", "purpose": "Scroll-in reveal for sections and staggered children." },
+      { "name": "lift-hover", "value": "translateY(-2px)", "purpose": "Buttons and nav links lift on hover." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main call to action (Contact, Send message).",
+      "html": "<button class=\"ds-btn-primary\">Contact Hassan</button>",
+      "css": ".ds-btn-primary { background: oklch(80% 0.15 72); color: oklch(15% 0.012 70); padding: 12px 24px; border: none; border-radius: 8px; font-family: Inter, system-ui, sans-serif; font-weight: 500; cursor: pointer; transition: background 0.2s, transform 0.2s; } .ds-btn-primary:hover { background: oklch(86% 0.085 88); transform: translateY(-2px); } .ds-btn-primary:active { transform: scale(0.96); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action (Review projects).",
+      "html": "<button class=\"ds-btn-ghost\">Review projects</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: oklch(95% 0.01 85); padding: 12px 24px; border: 1px solid oklch(41% 0.022 70); border-radius: 8px; font-family: Inter, system-ui, sans-serif; font-weight: 500; cursor: pointer; transition: color 0.2s, border-color 0.2s, transform 0.2s; } .ds-btn-ghost:hover { color: oklch(80% 0.15 72); border-color: oklch(80% 0.15 72); transform: translateY(-2px); }"
+    },
+    {
+      "name": "Skill Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Technology tag in the skills grid.",
+      "html": "<span class=\"ds-chip\">Next.js</span>",
+      "css": ".ds-chip { display: inline-block; background: oklch(20.5% 0.015 70); color: oklch(79% 0.012 80); border: 1px solid oklch(30% 0.015 70); border-radius: 6px; padding: 6px 12px; font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; transition: color 0.2s, border-color 0.2s; } .ds-chip:hover { color: oklch(80% 0.15 72); border-color: oklch(80% 0.15 72); }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Standard raised container (project, education, contact panels).",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Direct channels</h3><p class=\"ds-card-body\">Email, phone, and WhatsApp routes.</p></div>",
+      "css": ".ds-card { background: oklch(20.5% 0.015 70); border: 1px solid oklch(30% 0.015 70); border-radius: 8px; padding: 24px; transition: border-color 0.2s; } .ds-card:hover { border-color: oklch(80% 0.15 72 / 0.7); } .ds-card-title { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.02em; color: oklch(95% 0.01 85); margin: 0; } .ds-card-body { font-family: Inter, system-ui, sans-serif; color: oklch(64% 0.014 75); line-height: 1.75; margin: 16px 0 0; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Contact form field.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Your name\" />",
+      "css": ".ds-input { width: 100%; background: oklch(18.5% 0.015 70); color: oklch(95% 0.01 85); border: 1px solid oklch(30% 0.015 70); border-radius: 8px; padding: 12px 16px; font-family: Inter, system-ui, sans-serif; transition: border-color 0.2s; } .ds-input::placeholder { color: oklch(64% 0.014 75); } .ds-input:focus { outline: none; border-color: oklch(80% 0.15 72); }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed top bar, transparent until scrolled.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-logo\">HM</a><div class=\"ds-nav-links\"><a class=\"ds-nav-link\">Skills</a><a class=\"ds-nav-link\">AI</a><a class=\"ds-nav-link\">Contact</a></div></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; background: oklch(15% 0.012 70 / 0.9); border-bottom: 1px solid oklch(30% 0.015 70); backdrop-filter: blur(12px); } .ds-nav-logo { border: 1px solid oklch(41% 0.022 70); border-radius: 6px; padding: 6px 12px; font-family: Inter, system-ui, sans-serif; font-weight: 700; font-size: 0.875rem; color: oklch(95% 0.01 85); transition: color 0.2s, border-color 0.2s; cursor: pointer; } .ds-nav-logo:hover { color: oklch(80% 0.15 72); border-color: oklch(80% 0.15 72); } .ds-nav-links { display: flex; gap: 32px; } .ds-nav-link { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; color: oklch(64% 0.014 75); cursor: pointer; transition: color 0.2s, transform 0.2s; } .ds-nav-link:hover { color: oklch(95% 0.01 85); transform: translateY(-2px); }"
+    },
+    {
+      "name": "AI Workshop Panel Cell",
+      "kind": "custom",
+      "refersTo": "panel-signature",
+      "description": "One numbered tool cell from the signature 'How I work now' panel. Cells sit in a gap-px grid so 1px borders read as seams, not separate cards.",
+      "html": "<div class=\"ds-ai-cell\"><span class=\"ds-ai-index\">01</span><h3 class=\"ds-ai-name\">Claude Code</h3><p class=\"ds-ai-use\">Agentic refactors and PR-ready changes across large codebases.</p></div>",
+      "css": ".ds-ai-cell { background: oklch(20.5% 0.015 70); padding: 24px; transition: background 0.2s; } .ds-ai-cell:hover { background: oklch(24% 0.017 70); } .ds-ai-index { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 500; font-size: 0.875rem; color: oklch(80% 0.15 72); } .ds-ai-name { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.02em; color: oklch(95% 0.01 85); margin: 16px 0 0; } .ds-ai-use { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; line-height: 1.75; color: oklch(64% 0.014 75); margin: 12px 0 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Amber Workshop",
+    "overview": "The late-evening workspace of a senior engineer who builds things that last: warm, low-lit, an amber lamp throwing a soft glow across a dark surface with faint material grain under everything. Crafted and editorial, never neon, never corporate. It rejects the default developer-portfolio look: no cold blue-black, no electric-blue accent, no endless icon-card grids. Depth comes from warm tonal layering, not shadows, and the single amber accent is rationed so it still means something.",
+    "keyCharacteristics": [
+      "Warm amber-tinted dark, never cold blue-black",
+      "One rationed accent (amber), carrying identity without shouting",
+      "Display grotesque headings paired with a clean humanist body",
+      "Editorial layouts (numbered lists, dividers) over card grids",
+      "Subtle physical texture: ambient glow plus low-opacity film grain"
+    ],
+    "rules": [
+      { "name": "The Single Voice Rule", "body": "Amber Ember is the only saturated accent on any screen and stays under ~10% of the surface. Never introduce a second competing accent hue; reach for Warm Cream or a neutral instead.", "section": "colors" },
+      { "name": "The Warm Neutral Rule", "body": "No pure black, no pure white, no untinted grey. Every neutral carries low chroma (0.01-0.02) toward hue 70-85.", "section": "colors" },
+      { "name": "The Display-For-Identity Rule", "body": "Bricolage Grotesque appears on headings only. Body, labels, buttons, and UI text stay on Inter.", "section": "typography" },
+      { "name": "The Tight-Heading Rule", "body": "Display and headline type always carry -0.02em tracking and line-height at or below 1.05.", "section": "typography" },
+      { "name": "The Tonal-Depth Rule", "body": "Layer surfaces by lightness, not by shadow. Structural box-shadows are forbidden; the only shadow is the soft atmospheric amber glow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Amber Ember as the only saturated accent, under ~10% of any screen.",
+      "Do tint every neutral toward hue 70-85 with low chroma. Warm near-black and warm off-white only.",
+      "Do set every heading in Bricolage Grotesque via .font-display, with -0.02em tracking and line-height at or below 1.05.",
+      "Do convey depth through tonal layering and warm borders, not shadows.",
+      "Do reach for a numbered list, a divider, or bare layout before a card.",
+      "Do keep body measure at 65-75ch and section rhythm at 96px."
+    ],
+    "donts": [
+      "Don't reintroduce the cold dev-portfolio look: no #0a0a0a blue-black, no electric-blue accent, no system-ui-only type.",
+      "Don't build identical icon + heading + text card grids.",
+      "Don't use pure #000 or #fff anywhere.",
+      "Don't add a second saturated accent hue; use Warm Cream or a neutral for variety.",
+      "Don't use structural drop shadows to lift elements.",
+      "Don't set body copy in the display face or stretch headings with default/loose tracking.",
+      "Don't use side-stripe borders, gradient text, or decorative glassmorphism."
+    ]
+  }
+}

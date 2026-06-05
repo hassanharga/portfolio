@@ -9,6 +9,7 @@ const skillCategories = [
   { key: 'backendSystems', data: skills.backendSystems },
   { key: 'dataInfrastructure', data: skills.dataInfrastructure },
   { key: 'engineeringLeadership', data: skills.engineeringLeadership },
+  { key: 'aiAugmented', data: skills.aiAugmented },
 ] as const;
 
 export default function Skills() {
@@ -23,7 +24,7 @@ export default function Skills() {
           className="mb-14 max-w-3xl"
         >
           <p className="mb-3 text-sm uppercase tracking-[0.18em] text-[var(--primary)]">Capabilities</p>
-          <h2 className="text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">Where I create leverage</h2>
+          <h2 className="font-display text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">Where I create leverage</h2>
           <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--muted-strong)]">
             Recruiters and teams usually need more than a tool list. These are the practical areas where my stack shows up in production.
           </p>
@@ -42,7 +43,7 @@ export default function Skills() {
               variants={revealUp}
               className="border-t border-[var(--border)] pt-6"
             >
-              <h3 className="text-xl font-semibold text-[var(--foreground)]">{category.data.title}</h3>
+              <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">{category.data.title}</h3>
               <p className="mt-3 min-h-14 text-sm leading-7 text-[var(--muted)]">{category.data.summary}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {category.data.items.map((skill) => (

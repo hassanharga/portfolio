@@ -17,7 +17,7 @@ export default function Resume() {
         >
           <div>
             <p className="mb-3 text-sm uppercase tracking-[0.18em] text-[var(--primary)]">Experience</p>
-            <h2 className="text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">{yearOfExperience}+ years of delivery</h2>
+            <h2 className="font-display text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">{yearOfExperience}+ years of delivery</h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-[var(--muted-strong)] lg:pt-10">
             A backend-leaning full stack path across startups, agencies, telecom, and marketplace products.
@@ -39,7 +39,7 @@ export default function Resume() {
             >
               <div>
                 <p className="text-sm font-medium text-[var(--primary)]">{exp.period}</p>
-                <h3 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">{exp.role}</h3>
+                <h3 className="font-display mt-2 text-2xl font-semibold text-[var(--foreground)]">{exp.role}</h3>
                 <p className="mt-2 text-sm text-[var(--muted)]">
                   {exp.company} · {exp.location}
                 </p>
@@ -64,7 +64,7 @@ export default function Resume() {
           viewport={{ once: true }}
           className="mt-14"
         >
-          <h3 className="text-2xl font-semibold text-[var(--foreground)]">Education</h3>
+          <h3 className="font-display text-2xl font-semibold text-[var(--foreground)]">Education</h3>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
             {education.map((edu) => (
               <div key={`${edu.degree}-${edu.school}`} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6">

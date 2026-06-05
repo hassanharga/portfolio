@@ -1,7 +1,21 @@
 import type { Metadata } from 'next';
+import { Bricolage_Grotesque, Inter } from 'next/font/google';
 import './globals.css';
 import { yearOfExperience } from '@/data/content';
 import WhatsAppButton from '@/components/WhatsAppButton';
+
+const display = Bricolage_Grotesque({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+  weight: ['400', '500', '600', '700', '800'],
+});
+
+const sans = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Hassan Mohamed | Senior Full Stack Developer',
@@ -21,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body className="antialiased">
         {children}
         <WhatsAppButton />

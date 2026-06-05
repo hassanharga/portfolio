@@ -1,20 +1,27 @@
 @import 'tailwindcss';
 
 :root {
-  --background: oklch(13.5% 0.012 250);
-  --background-raised: oklch(16.5% 0.014 250);
-  --foreground: oklch(94% 0.01 250);
-  --primary: oklch(68% 0.16 245);
-  --primary-dark: oklch(58% 0.17 245);
-  --accent: oklch(76% 0.12 185);
-  --muted: oklch(62% 0.014 250);
-  --muted-strong: oklch(75% 0.012 250);
-  --surface: oklch(18.5% 0.014 250);
-  --surface-hover: oklch(22% 0.016 250);
-  --border: oklch(28% 0.016 250);
-  --border-strong: oklch(38% 0.024 250);
-  --success: oklch(72% 0.16 150);
-  --danger: oklch(68% 0.18 25);
+  /* Warm, amber-tinted dark. Deliberately not the cold dev-portfolio blue-black. */
+  --background: oklch(15% 0.012 70);
+  --background-raised: oklch(18.5% 0.015 70);
+  --foreground: oklch(95% 0.01 85);
+
+  /* Amber carries the identity; a soft cream secondary for variety. */
+  --primary: oklch(80% 0.15 72);
+  --primary-dark: oklch(72% 0.16 62);
+  --accent: oklch(86% 0.085 88);
+
+  --muted: oklch(64% 0.014 75);
+  --muted-strong: oklch(79% 0.012 80);
+  --surface: oklch(20.5% 0.015 70);
+  --surface-hover: oklch(24% 0.017 70);
+  --border: oklch(30% 0.015 70);
+  --border-strong: oklch(41% 0.022 70);
+  --success: oklch(74% 0.15 150);
+  --danger: oklch(68% 0.18 30);
+
+  --font-display: var(--font-display), 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-sans: var(--font-sans), 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 html {
@@ -23,12 +30,39 @@ html {
 }
 
 body {
+  position: relative;
   background: var(--background);
   color: var(--foreground);
-  font-family:
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+/* Ambient amber glow anchored to the top of the page. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 75% -10%, oklch(80% 0.15 72 / 0.16), transparent 60%),
+    radial-gradient(50rem 40rem at 0% 5%, oklch(72% 0.12 50 / 0.1), transparent 55%);
+}
+
+/* Subtle film grain so large dark fields are not flat. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 
 ::selection {

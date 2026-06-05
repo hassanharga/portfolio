@@ -18,16 +18,21 @@ export default function Hero() {
         >
           <motion.span
             variants={revealUp}
-            className="mb-6 inline-flex rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--accent)]"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--accent)]"
           >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--success)] opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--success)]" />
+            </span>
             Available for senior full stack and backend roles
           </motion.span>
 
           <motion.h1
             variants={revealUp}
-            className="max-w-4xl text-4xl font-semibold leading-[1.05] text-[var(--foreground)] sm:text-6xl lg:text-7xl"
+            className="font-display max-w-4xl text-5xl font-semibold leading-[1.02] text-[var(--foreground)] sm:text-6xl lg:text-7xl"
           >
-            {heroContent.name} builds product systems that survive real traffic.
+            {heroContent.name} builds product systems that{' '}
+            <span className="text-[var(--primary)]">survive real traffic.</span>
           </motion.h1>
 
           <motion.h2

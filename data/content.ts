@@ -28,6 +28,33 @@ export const skills = {
     summary: 'Raise delivery quality through reviews, testing, mentoring, and clear tradeoffs.',
     items: ['Code reviews', 'Unit testing', 'Architecture', 'Mentoring', 'Agile delivery'],
   },
+  aiAugmented: {
+    title: 'AI-augmented workflow',
+    summary: 'Use agentic coding tools daily to move faster while keeping human review and ownership.',
+    items: ['Claude Code', 'OpenCode', 'Codex', 'AI code review', 'Spec-to-PR', 'Test generation'],
+  },
+};
+
+export const aiWorkflow = {
+  eyebrow: 'How I work now',
+  title: 'AI-augmented delivery, engineer in the loop',
+  intro:
+    'Agentic coding tools are part of my daily workflow. They speed up the mechanical work so I can spend more time on architecture, tradeoffs, and review. Every change still ships through tests, human review, and clear ownership.',
+  tools: [
+    {
+      name: 'Claude Code',
+      use: 'Agentic refactors, architecture exploration, and PR-ready changes across large codebases.',
+    },
+    {
+      name: 'OpenCode',
+      use: 'Terminal-native agent for quick edits, scripting, and confident multi-file changes.',
+    },
+    {
+      name: 'Codex',
+      use: 'Fast scaffolding, boilerplate, and inline implementation during focused build sessions.',
+    },
+  ],
+  principles: ['Human review on every change', 'Tests before merge', 'I own the architecture, not the autocomplete'],
 };
 
 export const experience = [
@@ -356,6 +383,7 @@ export function getWhatsAppUrl() {
 export const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'Skills', href: '#skills' },
+  { name: 'AI', href: '#ai-workflow' },
   { name: 'Resume', href: '#resume' },
   { name: 'Portfolio', href: '#portfolio' },
   { name: 'Services', href: '#services' },
