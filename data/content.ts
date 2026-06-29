@@ -65,10 +65,11 @@ export const experience = [
     location: 'Remote',
     period: 'Oct 2025 - Present',
     description: [
-      'Build Node.js microservices and system architecture for high-traffic mobility products where reliability, clear service boundaries, and maintainable delivery matter.',
-      'Improve code quality through unit tests, automation, and code reviews that help the team move faster without accumulating avoidable production risk.',
-      'Translate product, design, and operations requirements into pragmatic backend solutions that can be shipped, observed, and iterated on schedule.',
-      'Contribute to architecture discussions and implementation planning, balancing delivery pressure with long-term maintainability for core platform services.',
+      'Build and own Node.js microservices and system architecture for a high-traffic mobility platform.',
+      'Built an internal Next.js dashboard for real-time monitoring of one of our services, giving the team live visibility into its progress and data.',
+      'Raised code quality and release confidence by introducing unit tests, automation, and code reviews.',
+      'Translate product, design, and operations requirements into pragmatic backend solutions that ship, get observed, and iterate on schedule',
+      'Contribute to architecture and implementation planning for core platform services, balancing delivery pressure against long-term maintainability',
     ],
   },
   {
@@ -78,10 +79,10 @@ export const experience = [
     location: 'Remote',
     period: 'Feb 2024 - Oct 2025',
     description: [
-      'Built responsive React and Next.js applications with server-side rendering, improving performance, SEO readiness, and the overall quality of public product pages.',
-      'Architected Node.js backend services with authentication, logging, validation, and structured error handling so teams could extend features with confidence.',
-      'Integrated dotCMS through GraphQL to deliver structured content into React interfaces without coupling editorial workflows to application releases.',
-      'Managed Docker deployments on AWS EC2, supporting more predictable releases and reducing manual operational friction during product delivery.',
+      'Built responsive React and Next.js applications with server-side rendering for stronger SEO and performance, managing state with Redux and Context API.',
+      'Architected Node.js backend services with authentication, logging, request validation, and structured error handling, enabling the team to extend features with confidence',
+      'Integrated dotCMS as a headless CMS over GraphQL, decoupling editorial workflows from application releases.',
+      'Managed Dockerized deployments on AWS EC2 with autoscaling, improving release predictability and reducing downtime',
     ],
   },
   {
@@ -91,10 +92,10 @@ export const experience = [
     location: 'Cairo, Egypt',
     period: 'Sep 2023 - Feb 2024',
     description: [
-      'Modernized TypeScript, React, Angular, and Node.js applications while improving state management patterns across Redux, Zustand, and NgRx code paths.',
-      'Introduced Storybook for React and Angular component documentation, making shared UI behavior easier to test, review, and reuse across teams.',
-      'Mentored junior developers through reviews, onboarding, and practical engineering guidance focused on readability, ownership, and delivery habits.',
-      'Worked with MongoDB-backed application flows, keeping data access practical while supporting dynamic product requirements and fast iteration.',
+      'Upgraded production applications to current versions of TypeScript, React, Angular, and Node.js, modernizing state management across Redux, Zustand, and NgRx.',
+      'Introduced Storybook for React and Angular, improving component documentation, reusability, and test coverage across team',
+      'Built MongoDB-backed application flows supporting dynamic product requirements and fast iteration.',
+      'Mentored junior developers through code reviews, onboarding, and best-practice guidance.',
     ],
   },
   {
@@ -104,10 +105,10 @@ export const experience = [
     location: 'Remote',
     period: 'Feb 2022 - Sep 2023',
     description: [
-      'Designed team management tooling with TypeScript, Node.js, Angular, and React to make delivery progress, tasks, and team activity easier to track.',
-      'Integrated GitHub, Jira, and Slack workflows to automate task tracking, branch visibility, and build updates across engineering teams.',
-      'Built real-time Socket.io features for notifications and live data updates, improving coordination for teams working across mobile and web releases.',
-      'Deployed and managed AWS services across Lambda, EC2, S3, and Route53, balancing operational cost, performance, and release reliability.',
+      'Designed and built a team-management tool in TypeScript, Node.js, Angular, and React to track delivery progress and tasks',
+      'Integrated GitHub, Jira, and Slack to automate task tracking, branch retrieval, and build notifications.',
+      'Architected real-time notification and live-data features with Socket.io and Node.js, improving team coordination across web and mobile releases',
+      'Deployed and managed applications on AWS (Lambda, EC2, S3, Route53), optimizing cost and performance.',
     ],
   },
   {
@@ -117,10 +118,10 @@ export const experience = [
     location: 'Cairo, Egypt',
     period: 'Apr 2021 - Feb 2022',
     description: [
-      'Engineered responsive React and Angular interfaces for enterprise telecom workflows where consistency, accessibility, and predictable behavior were important.',
-      'Improved maintainability with Jest and Angular Testing Library coverage, giving teams better confidence around shared UI changes and regressions.',
-      'Contributed reusable components to an internal UI library, reducing repeated implementation work and helping teams deliver screens more consistently.',
-      'Collaborated through sprint planning, reviews, and retrospectives, keeping implementation decisions aligned with delivery priorities and team standards.',
+      'Engineered responsive React and Angular interfaces for enterprise telecom workflows, ensuring performance, accessibility, and consistency',
+      'Improved maintainability and reduced regressions on shared UI with Jest and Angular Testing Library coverage.',
+      'Contributed reusable components to an internal UI library, cutting repeated implementation work across teams.',
+      'Collaborated in Agile ceremonies (sprint planning, retrospectives, daily stand-ups), keeping implementation aligned with delivery priorities.',
     ],
   },
   {
@@ -130,10 +131,10 @@ export const experience = [
     location: 'Cairo, Egypt',
     period: 'Apr 2019 - Apr 2021',
     description: [
-      'Delivered full-stack applications with TypeScript, React, Node.js, Angular, MongoDB, and AWS for products that needed fast, practical execution.',
-      'Built React Native and Expo mobile applications alongside web products, moving between client interfaces, APIs, and release requirements as needed.',
-      'Created real-time dashboards with Socket.io and Redis caching for live updates, messaging, session handling, and operational visibility.',
-      'Established CI/CD pipelines with AWS CodePipeline and GitHub Actions, automating build, test, and deployment steps for repeatable delivery.',
+      'Delivered full-stack applications with TypeScript, React, Node.js, Angular, MongoDB, and AWS (DynamoDB, EC2, S3), helping the company meet critical deadlines.',
+      'Built React Native and Expo framework mobile applications alongside web products.',
+      'Created real-time dashboards and chat with Node.js and Socket.io, using Redis for session management and caching.',
+      'Established CI/CD pipelines with AWS CodePipeline and GitHub Actions, automating build, test, and deployment cycles.',
     ],
   },
 ];
@@ -358,7 +359,8 @@ export const services = [
   {
     id: 4,
     title: 'Raise engineering quality',
-    description: 'Strengthen codebases through architecture reviews, mentoring, test strategy, and practical delivery tradeoffs.',
+    description:
+      'Strengthen codebases through architecture reviews, mentoring, test strategy, and practical delivery tradeoffs.',
     icon: 'users',
   },
 ];
