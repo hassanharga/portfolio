@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { heroContent } from '@/data/content';
+import { heroContent, cvUrl } from '@/data/content';
 import { revealTransition, revealUp, staggerContainer } from './animations';
 
 export default function Hero() {
@@ -79,6 +79,19 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
             >
               Review projects
+            </motion.a>
+            <motion.a
+              href={cvUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[var(--primary)] transition-colors hover:text-[var(--accent)]"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Download CV
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </motion.a>
           </motion.div>
         </motion.div>

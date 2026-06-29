@@ -1,5 +1,7 @@
 export const yearOfExperience = new Date().getFullYear() - 2019;
 
+export const cvUrl = 'https://flowcv.com/resume/q851s66nns';
+
 export const heroContent = {
   name: 'Hassan Mohamed',
   title: 'Senior Full Stack Developer',

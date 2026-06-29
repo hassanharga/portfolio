@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { education, experience, yearOfExperience } from '@/data/content';
+import { education, experience, yearOfExperience, cvUrl } from '@/data/content';
 import { revealUp, staggerContainer } from './animations';
 
 export default function Resume() {
@@ -74,6 +74,26 @@ export default function Resume() {
               </div>
             ))}
           </div>
+        </motion.div>
+
+        <motion.div
+          variants={revealUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-12 flex justify-center"
+        >
+          <a
+            href={cvUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-[var(--primary)] px-6 py-3 font-medium text-[var(--background)] transition-colors hover:bg-[var(--accent)]"
+          >
+            Download full CV
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
         </motion.div>
       </div>
     </section>
