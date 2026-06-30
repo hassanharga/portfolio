@@ -1,8 +1,9 @@
+import WhatsAppButton from '@/components/WhatsAppButton';
+import { contact, yearOfExperience } from '@/data/content';
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Inter } from 'next/font/google';
 import './globals.css';
-import { yearOfExperience, contact } from '@/data/content';
-import WhatsAppButton from '@/components/WhatsAppButton';
 
 const SITE_URL = 'https://hassanharga.vercel.app';
 
@@ -130,6 +131,7 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {children}
         <WhatsAppButton />
+        <Analytics />
       </body>
     </html>
   );
