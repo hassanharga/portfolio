@@ -1,0 +1,52 @@
+# Hassan Mohamed
+
+> Senior Full Stack Developer with 7+ years building scalable web applications. Egypt-based, working remotely.
+
+## About
+
+Hassan Mohamed is a senior full stack engineer specializing in Node.js, React, Next.js, Angular, and Go. He has shipped production systems across marketplace, telecom, mobility, and SaaS products. His strongest areas are backend architecture, APIs, cloud deployments, and the integration work that turns product ideas into shipped software.
+
+## Skills
+
+- **Product engineering**: React, Next.js, Angular, React Native, TypeScript
+- **Backend systems**: Node.js, Nest.js, Express.js, Go, Microservices
+- **Data & infrastructure**: PostgreSQL, MongoDB, Redis, DynamoDB, Docker, AWS, GCP, CI/CD
+- **Engineering leadership**: Code reviews, unit testing, architecture, mentoring, agile delivery
+- **AI-augmented workflow**: Claude Code, OpenCode, Codex, AI code review, spec-to-PR, test generation
+
+## Experience
+
+- **Senior Backend Developer** at Yassir (Oct 2025 - Present) — Building Node.js microservices for a high-traffic mobility platform
+- **Senior Fullstack Developer** at InnovationTeam (Feb 2024 - Oct 2025) — React/Next.js applications with Node.js backend services, dotCMS headless CMS, Dockerized AWS deployments
+- **Senior Fullstack Developer** at Modeso (Sep 2023 - Feb 2024) — TypeScript, React, Angular, Node.js modernization; introduced Storybook
+- **Fullstack Developer** at InnovationTeam / STC (Feb 2022 - Sep 2023) — Team-management tool with GitHub/Jira/Slack integrations, real-time features
+- **Fullstack Developer** at VOIS (Apr 2021 - Feb 2022) — React and Angular interfaces for enterprise telecom, Jest testing
+- **Fullstack Developer** at Codiles (Apr 2019 - Apr 2021) — Full-stack TypeScript/React/Node.js applications, React Native mobile apps, CI/CD pipelines
+
+## Education
+
+- Web Development Diploma — Information Technology Institute (ITI), 2018-2019
+- BSc Computer Science — Mansoura University, 2011-2015
+
+## Notable Projects
+
+- [Yassir](https://yassir.com/) — Ride-hailing platform (Node.js, Microservices, MongoDB, Redis, Docker, GCP)
+- [GO-Social-API](https://github.com/hassanharga/go-social) — Social networking API in Go (Go, PostgreSQL, Redis, Swagger, Docker)
+- [ITBA](https://www.srfsh.com/) — Eco-tourism application (React, Next.js, Node.js, TypeScript, Azure)
+- [Dental Axess](https://dentalaxess.com/products/xflow/) — Digital dentistry platform (Angular, Node.js, MongoDB, TypeScript, Docker)
+- [Twint Super Deals](https://deals.twint.ch/) — Deals platform (Node.js, MongoDB, RabbitMQ, Angular, GCP, Docker)
+
+## Contact
+
+- Email: hassanharga@gmail.com
+- Phone: +201282668013
+- LinkedIn: https://linkedin.com/in/hassanharga
+- GitHub: https://github.com/hassanharga
+- Location: Egypt (Remote)
+
+## Links
+
+- [Website](https://hassanharga.vercel.app)
+- [CV](https://flowcv.com/resume/q851s66nns)
+- [LinkedIn](https://linkedin.com/in/hassanharga)
+- [GitHub](https://github.com/hassanharga)
