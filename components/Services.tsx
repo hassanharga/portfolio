@@ -39,9 +39,9 @@ export default function Services() {
                 {String(index + 1).padStart(2, '0')}
               </span>
               <div className="grid gap-4 lg:grid-cols-[1fr_1.4fr] lg:items-baseline lg:gap-10">
-                <h3 className="font-display text-2xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)] sm:text-3xl">
+                <div className="font-display text-2xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)] sm:text-3xl">
                   {service.title}
-                </h3>
+                </div>
                 <p className="text-base leading-8 text-[var(--muted)]">{service.description}</p>
               </div>
             </motion.div>

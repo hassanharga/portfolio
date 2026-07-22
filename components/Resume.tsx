@@ -39,7 +39,7 @@ export default function Resume() {
             >
               <div>
                 <p className="text-sm font-medium text-[var(--primary)]">{exp.period}</p>
-                <h3 className="font-display mt-2 text-2xl font-semibold text-[var(--foreground)]">{exp.role}</h3>
+                <h3 className="font-display mt-2 text-2xl font-semibold text-[var(--foreground)]">{exp.role} — {exp.company}</h3>
                 <p className="mt-2 text-sm text-[var(--muted)]">
                   {exp.company} · {exp.location}
                 </p>
@@ -69,7 +69,7 @@ export default function Resume() {
             {education.map((edu) => (
               <div key={`${edu.degree}-${edu.school}`} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6">
                 <p className="text-sm font-medium text-[var(--primary)]">{edu.period}</p>
-                <h4 className="mt-2 text-lg font-semibold text-[var(--foreground)]">{edu.degree}</h4>
+                <div className="mt-2 text-lg font-semibold text-[var(--foreground)]">{edu.degree}</div>
                 <p className="mt-1 text-sm text-[var(--muted)]">{edu.school}</p>
               </div>
             ))}

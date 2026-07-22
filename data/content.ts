@@ -5,7 +5,7 @@ export const cvUrl = 'https://flowcv.com/resume/q851s66nns';
 export const heroContent = {
   name: 'Hassan Mohamed',
   title: 'Senior Full Stack Developer',
-  bio: `Senior full stack engineer with ${yearOfExperience}+ years building production web systems across marketplace, telecom, mobility, and SaaS products. Strongest in Node.js, React, Next.js, cloud deployments, APIs, and the messy integration work that turns product ideas into shipped software.`,
+  bio: `Senior full stack engineer with ${yearOfExperience}+ years building product systems that survive real traffic — across marketplace, telecom, mobility, and SaaS. Strongest in Node.js, React, Next.js, cloud deployments, APIs, and the messy integration work that turns product ideas into shipped software.`,
   proofPoints: [`${yearOfExperience}+ years shipping`, 'Backend + frontend depth', 'Cloud, APIs, microservices'],
 };
 

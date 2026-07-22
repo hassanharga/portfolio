@@ -66,9 +66,9 @@ export default function Portfolio() {
 
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-display text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
+                    <div className="font-display text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
                       {project.title}
-                    </h3>
+                    </div>
                     {project.featured && (
                       <span className="shrink-0 rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--accent)]">
                         Featured

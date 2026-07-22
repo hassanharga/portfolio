@@ -77,7 +77,7 @@ export default function Contact() {
             className="space-y-6"
           >
             <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6">
-              <h3 className="text-xl font-semibold text-[var(--foreground)]">Direct channels</h3>
+              <div className="text-xl font-semibold text-[var(--foreground)]">Direct channels</div>
               <div className="mt-6 space-y-5">
                 <a href={`mailto:${contact.email}`} className="block text-sm text-[var(--muted)] transition-colors hover:text-[var(--primary)]">
                   <span className="block text-xs uppercase tracking-[0.16em] text-[var(--muted)]">Email</span>

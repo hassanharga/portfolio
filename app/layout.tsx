@@ -1,5 +1,5 @@
 import WhatsAppButton from '@/components/WhatsAppButton';
-import { contact, yearOfExperience } from '@/data/content';
+import { contact } from '@/data/content';
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Inter } from 'next/font/google';
@@ -20,7 +20,7 @@ const sans = Inter({
   display: 'swap',
 });
 
-const description = `Hassan Mohamed — Senior Full Stack Developer with ${yearOfExperience}+ years building scalable web applications in Node.js, React, Next.js, and Go. Based in Egypt, working remotely.`;
+const description = `Hassan Mohamed — Senior Full Stack Developer building scalable web apps in Node.js, React, Next.js & Go.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -71,12 +71,21 @@ export const metadata: Metadata = {
     siteName: 'Hassan Mohamed — Senior Full Stack Developer',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Hassan Mohamed — Senior Full Stack Developer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Hassan Mohamed | Senior Full Stack Developer',
     description,
     creator: '@hassanharga',
+    images: ['/opengraph-image'],
   },
 };
 

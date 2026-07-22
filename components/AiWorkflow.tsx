@@ -39,7 +39,7 @@ export default function AiWorkflow() {
           {aiWorkflow.tools.map((tool, index) => (
             <motion.div key={tool.name} variants={revealUp} className="group bg-[var(--surface)] p-6 transition-colors hover:bg-[var(--surface-hover)]">
               <span className="font-display text-sm font-medium text-[var(--primary)]">{String(index + 1).padStart(2, '0')}</span>
-              <h3 className="font-display mt-4 text-xl font-semibold text-[var(--foreground)]">{tool.name}</h3>
+              <div className="font-display mt-4 text-xl font-semibold text-[var(--foreground)]">{tool.name}</div>
               <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{tool.use}</p>
             </motion.div>
           ))}
