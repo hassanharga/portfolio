@@ -10,7 +10,7 @@ colors:
   surface-warm: "oklch(20.5% 0.015 70)"
   surface-hover: "oklch(24% 0.017 70)"
   paper-white: "oklch(95% 0.01 85)"
-  muted-sand: "oklch(64% 0.014 75)"
+  muted-sand: "oklch(70% 0.014 75)"
   muted-strong: "oklch(79% 0.012 80)"
   border-warm: "oklch(30% 0.015 70)"
   border-strong: "oklch(41% 0.022 70)"
@@ -136,7 +136,7 @@ A warm monochrome dark anchored by a single amber accent and a soft cream highli
 - **Surface Hover** (`oklch(24% 0.017 70)`): Hover state for raised surfaces.
 - **Paper White** (`oklch(95% 0.01 85)`): Primary text and headings. Warm off-white, never `#fff`.
 - **Muted Strong** (`oklch(79% 0.012 80)`): Secondary body copy and emphasis within muted blocks.
-- **Muted Sand** (`oklch(64% 0.014 75)`): Tertiary text, captions, inactive nav links, list descriptions.
+- **Muted Sand** (`oklch(70% 0.014 75)`): Tertiary text, captions, inactive nav links, list descriptions.
 - **Border Warm** (`oklch(30% 0.015 70)`): Default dividers and card borders.
 - **Border Strong** (`oklch(41% 0.022 70)`): Emphasis borders (ghost buttons, signature panel, framed avatar).
 
@@ -199,13 +199,13 @@ This is a near-flat system. Depth comes from tonal layering (Ink Black to Ink Ra
 
 ### Inputs / Fields
 - **Style:** Ink Raised background, Border Warm outline, 8px radius, 12px 16px padding, Muted Sand placeholder.
-- **Focus:** Border shifts to Amber Ember; the default browser outline is removed (`focus:outline-none`).
+- **Focus:** Border shifts to Amber Ember and a visible Amber Ember outline remains for keyboard navigation.
 - **Error:** Message block uses Signal Red text on a 10%-opacity Signal Red fill with a 40%-opacity Signal Red border. Success uses the Signal Green equivalents.
 
 ### Navigation
-- **Style:** Fixed top bar, transparent at the top of the page. After 50px of scroll it gains a Border Warm bottom edge and an Ink Black background at 90% opacity with `backdrop-blur-md`.
+- **Style:** Fixed top bar, transparent at the top of the page. After scrolling it gains a Border Warm bottom edge and an opaque Ink Black background so content never shows through the navigation.
 - **Logo:** "HM" monogram in a Border Strong pill that shifts to Amber Ember on hover.
-- **Links:** Inter, Muted Sand at rest, Paper White on hover, lifting 2px. Mobile collapses to an animated height-expanding panel.
+- **Links:** Inter, Muted Sand at rest, Paper White on hover, lifting 2px. Mobile collapses through an animated grid-row transition.
 
 ### Signature Component: The AI Workshop Panel
 The "How I work now" section is the system's signature surface. A single large 24px-radius panel (Surface Warm, Border Strong) with an off-canvas amber glow blurred behind the top-right corner. Inside, the three AI tools are laid out as a seamless three-cell grid built from a 1px border gap (`gap-px` on a Border Warm background) rather than separate cards, each cell numbered with a display-face index. This is the reference example of "editorial over card grid."

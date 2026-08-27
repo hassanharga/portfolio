@@ -1,18 +1,16 @@
-export const yearOfExperience = new Date().getFullYear() - 2019;
-
 export const cvUrl = 'https://flowcv.com/resume/q851s66nns';
 
 export const heroContent = {
   name: 'Hassan Mohamed',
   title: 'Senior Full Stack Developer',
-  bio: `Senior full stack engineer with ${yearOfExperience}+ years building product systems that survive real traffic — across marketplace, telecom, mobility, and SaaS. Strongest in Node.js, React, Next.js, cloud deployments, APIs, and the messy integration work that turns product ideas into shipped software.`,
-  proofPoints: [`${yearOfExperience}+ years shipping`, 'Backend + frontend depth', 'Cloud, APIs, microservices'],
+  bio: 'Senior full stack engineer building product systems across marketplace, telecom, mobility, and SaaS. Strongest in Node.js, React, Next.js, cloud deployments, APIs, and the integration work that turns product ideas into shipped software.',
+  proofPoints: ['Backend systems', 'Product interfaces', 'Cloud delivery'],
 };
 
 export const skills = {
   productEngineering: {
     title: 'Product engineering',
-    summary: 'Build recruiter-visible product surfaces from interface to data model.',
+    summary: 'Build product surfaces from interface to data model.',
     items: ['React', 'Next.js', 'Angular', 'React Native', 'TypeScript'],
   },
   backendSystems: {
@@ -157,7 +155,7 @@ export const education = [
 export const projects = [
   {
     title: 'Yassir',
-    description: 'Hassle-free ride-hailing, designed for your convenience and safety',
+    description: 'Ride-hailing product work across backend services, delivery tooling, and platform operations.',
     outcome: 'Backend engineering for a regional mobility platform with microservice-scale delivery needs.',
     tags: [
       'TypeScript ',
@@ -210,8 +208,7 @@ export const projects = [
   },
   {
     title: 'ITBA',
-    description:
-      'Our innovative Eco-Tourism and North Reserve Tourism application is designed to promote sustainable travel experiences, enabling adventurers and nature enthusiasts to explore pristine landscapes responsibly. With a focus on conservation and minimal environmental impact, the app provides travelers with detailed guides to North Reserve’s untouched ecosystems, highlighting local wildlife, flora, and culturally significant sites.',
+    description: 'Eco-tourism application for exploring North Reserve locations, wildlife, and culturally significant sites.',
     outcome: 'Tourism product build spanning a public Next.js experience and supporting backend services.',
     tags: ['React', 'Next.js', 'Node.js', 'Typescript', 'Material-UI', 'Azure'],
     displayTags: ['React', 'Next.js', 'Node.js', 'TypeScript', 'Azure'],
@@ -222,8 +219,7 @@ export const projects = [
   },
   {
     title: 'Dental Axess',
-    description:
-      'Dental Axess are specialists in digital dentistry, providing a large range of hardware and software components to complete your digital workflow sourced from market leading firms for dental treatment providers and selected using Dental Axess experience',
+    description: 'Digital dentistry product catalogue and workflow for treatment providers.',
     outcome: 'Product workflow experience for dental technology buyers and treatment providers.',
     tags: ['Angular', 'Node.js', 'MongoDB', 'TypeScript', 'Docker', 'SCSS'],
     displayTags: ['Angular', 'Node.js', 'MongoDB', 'TypeScript', 'Docker'],
@@ -234,7 +230,7 @@ export const projects = [
   },
   {
     title: 'Twint Super Deals',
-    description: 'Benefit from exclusive discount, promotions and special offers every week through twint app',
+    description: 'Deals experience for discounts and promotions available through the TWINT app.',
     outcome: 'Deals platform work involving backend services, Angular interfaces, queues, and cloud deployment.',
     tags: [
       'Node.js',
@@ -260,8 +256,7 @@ export const projects = [
   },
   {
     title: 'Rateel',
-    description:
-      'Rateel is a free app that lets you know the reciter of any Quran audio. By only listening to the audio, Rateel provides you with all the information you need, such as the name of the reciter, and what surah (chapter) he is reciting.',
+    description: 'Audio recognition app that identifies Quran reciters and the surah being recited.',
     outcome: 'Mobile-backed product experience using AWS services and TypeScript application code.',
     tags: [
       'Node.js',
@@ -281,8 +276,7 @@ export const projects = [
   },
   {
     title: 'STC Dashboard',
-    description:
-      'Monitor Task for IOS and Android team while developing apps and provide charts for measuring analytics and developing subs for test teams to test their work',
+    description: 'Internal dashboard for mobile delivery progress, analytics, and test-team workflows.',
     outcome: 'Internal dashboard for delivery visibility, analytics, and mobile team coordination.',
     tags: [
       'Node.js',
@@ -302,8 +296,7 @@ export const projects = [
   },
   {
     title: 'Saldwich',
-    description:
-      'Food application and dashboard for managing restaurants branches, delivery, meals, menu items and orders for each branch based on customer location',
+    description: 'Customer app and operations dashboard for restaurant branches, delivery, menus, and location-based orders.',
     outcome: 'Restaurant operations platform spanning customer app, dashboard, delivery, and menu management.',
     tags: [
       'TypeScript',
@@ -326,7 +319,7 @@ export const projects = [
   },
   {
     title: 'Vodafone Germany',
-    description: 'Develop vodafone site in germany',
+    description: 'Customer-facing web delivery for Vodafone Germany.',
     outcome: 'Enterprise web delivery for Vodafone Germany customer-facing experiences.',
     tags: ['TypeScript', 'JavaScript', 'Angular', 'JIRA'],
     displayTags: ['TypeScript', 'Angular', 'JavaScript', 'Jira'],
@@ -386,10 +379,8 @@ export function getWhatsAppUrl() {
 
 export const navLinks = [
   { name: 'Home', href: '#home' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'AI', href: '#ai-workflow' },
-  { name: 'Resume', href: '#resume' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Services', href: '#services' },
+  { name: 'Work', href: '#portfolio' },
+  { name: 'Experience', href: '#resume' },
+  { name: 'Capabilities', href: '#skills' },
   { name: 'Contact', href: '#contact' },
 ];

@@ -6,8 +6,8 @@
     "colorMeta": {
       "amber-ember": { "role": "primary", "displayName": "Amber Ember", "canonical": "oklch(80% 0.15 72)", "tonalRamp": ["oklch(22% 0.06 72)", "oklch(32% 0.09 72)", "oklch(44% 0.12 72)", "oklch(56% 0.14 72)", "oklch(68% 0.15 72)", "oklch(80% 0.15 72)", "oklch(88% 0.1 78)", "oklch(95% 0.05 85)"] },
       "warm-cream": { "role": "secondary", "displayName": "Warm Cream", "canonical": "oklch(86% 0.085 88)", "tonalRamp": ["oklch(28% 0.04 88)", "oklch(40% 0.05 88)", "oklch(52% 0.06 88)", "oklch(64% 0.07 88)", "oklch(75% 0.08 88)", "oklch(86% 0.085 88)", "oklch(92% 0.05 88)", "oklch(97% 0.02 88)"] },
-      "ink-black": { "role": "neutral", "displayName": "Ink Black", "canonical": "oklch(15% 0.012 70)", "tonalRamp": ["oklch(15% 0.012 70)", "oklch(18.5% 0.015 70)", "oklch(20.5% 0.015 70)", "oklch(24% 0.017 70)", "oklch(30% 0.015 70)", "oklch(41% 0.022 70)", "oklch(64% 0.014 75)", "oklch(95% 0.01 85)"] },
-      "paper-white": { "role": "neutral", "displayName": "Paper White", "canonical": "oklch(95% 0.01 85)", "tonalRamp": ["oklch(20% 0.012 80)", "oklch(32% 0.012 80)", "oklch(48% 0.012 80)", "oklch(64% 0.014 75)", "oklch(79% 0.012 80)", "oklch(88% 0.011 82)", "oklch(95% 0.01 85)", "oklch(98% 0.006 85)"] },
+      "ink-black": { "role": "neutral", "displayName": "Ink Black", "canonical": "oklch(15% 0.012 70)", "tonalRamp": ["oklch(15% 0.012 70)", "oklch(18.5% 0.015 70)", "oklch(20.5% 0.015 70)", "oklch(24% 0.017 70)", "oklch(30% 0.015 70)", "oklch(41% 0.022 70)", "oklch(70% 0.014 75)", "oklch(95% 0.01 85)"] },
+      "paper-white": { "role": "neutral", "displayName": "Paper White", "canonical": "oklch(95% 0.01 85)", "tonalRamp": ["oklch(20% 0.012 80)", "oklch(32% 0.012 80)", "oklch(48% 0.012 80)", "oklch(70% 0.014 75)", "oklch(79% 0.012 80)", "oklch(88% 0.011 82)", "oklch(95% 0.01 85)", "oklch(98% 0.006 85)"] },
       "signal-green": { "role": "tertiary", "displayName": "Signal Green", "canonical": "oklch(74% 0.15 150)", "tonalRamp": ["oklch(24% 0.06 150)", "oklch(36% 0.09 150)", "oklch(48% 0.12 150)", "oklch(60% 0.14 150)", "oklch(74% 0.15 150)", "oklch(83% 0.12 150)", "oklch(90% 0.08 150)", "oklch(96% 0.04 150)"] }
     },
     "typographyMeta": {
@@ -63,7 +63,7 @@
       "refersTo": "card",
       "description": "Standard raised container (project, education, contact panels).",
       "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Direct channels</h3><p class=\"ds-card-body\">Email, phone, and WhatsApp routes.</p></div>",
-      "css": ".ds-card { background: oklch(20.5% 0.015 70); border: 1px solid oklch(30% 0.015 70); border-radius: 8px; padding: 24px; transition: border-color 0.2s; } .ds-card:hover { border-color: oklch(80% 0.15 72 / 0.7); } .ds-card-title { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.02em; color: oklch(95% 0.01 85); margin: 0; } .ds-card-body { font-family: Inter, system-ui, sans-serif; color: oklch(64% 0.014 75); line-height: 1.75; margin: 16px 0 0; }"
+      "css": ".ds-card { background: oklch(20.5% 0.015 70); border: 1px solid oklch(30% 0.015 70); border-radius: 8px; padding: 24px; transition: border-color 0.2s; } .ds-card:hover { border-color: oklch(80% 0.15 72 / 0.7); } .ds-card-title { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.02em; color: oklch(95% 0.01 85); margin: 0; } .ds-card-body { font-family: Inter, system-ui, sans-serif; color: oklch(70% 0.014 75); line-height: 1.75; margin: 16px 0 0; }"
     },
     {
       "name": "Text Input",
@@ -71,7 +71,7 @@
       "refersTo": "input",
       "description": "Contact form field.",
       "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Your name\" />",
-      "css": ".ds-input { width: 100%; background: oklch(18.5% 0.015 70); color: oklch(95% 0.01 85); border: 1px solid oklch(30% 0.015 70); border-radius: 8px; padding: 12px 16px; font-family: Inter, system-ui, sans-serif; transition: border-color 0.2s; } .ds-input::placeholder { color: oklch(64% 0.014 75); } .ds-input:focus { outline: none; border-color: oklch(80% 0.15 72); }"
+      "css": ".ds-input { width: 100%; background: oklch(18.5% 0.015 70); color: oklch(95% 0.01 85); border: 1px solid oklch(30% 0.015 70); border-radius: 8px; padding: 12px 16px; font-family: Inter, system-ui, sans-serif; transition: border-color 0.2s; } .ds-input::placeholder { color: oklch(70% 0.014 75); } .ds-input:focus { outline: 2px solid oklch(80% 0.15 72); outline-offset: 3px; border-color: oklch(80% 0.15 72); }"
     },
     {
       "name": "Navigation Bar",
@@ -79,7 +79,7 @@
       "refersTo": "nav",
       "description": "Fixed top bar, transparent until scrolled.",
       "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-logo\">HM</a><div class=\"ds-nav-links\"><a class=\"ds-nav-link\">Skills</a><a class=\"ds-nav-link\">AI</a><a class=\"ds-nav-link\">Contact</a></div></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; background: oklch(15% 0.012 70 / 0.9); border-bottom: 1px solid oklch(30% 0.015 70); backdrop-filter: blur(12px); } .ds-nav-logo { border: 1px solid oklch(41% 0.022 70); border-radius: 6px; padding: 6px 12px; font-family: Inter, system-ui, sans-serif; font-weight: 700; font-size: 0.875rem; color: oklch(95% 0.01 85); transition: color 0.2s, border-color 0.2s; cursor: pointer; } .ds-nav-logo:hover { color: oklch(80% 0.15 72); border-color: oklch(80% 0.15 72); } .ds-nav-links { display: flex; gap: 32px; } .ds-nav-link { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; color: oklch(64% 0.014 75); cursor: pointer; transition: color 0.2s, transform 0.2s; } .ds-nav-link:hover { color: oklch(95% 0.01 85); transform: translateY(-2px); }"
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; background: oklch(15% 0.012 70); border-bottom: 1px solid oklch(30% 0.015 70); } .ds-nav-logo { border: 1px solid oklch(41% 0.022 70); border-radius: 6px; padding: 6px 12px; font-family: Inter, system-ui, sans-serif; font-weight: 700; font-size: 0.875rem; color: oklch(95% 0.01 85); transition: color 0.2s, border-color 0.2s; cursor: pointer; } .ds-nav-logo:hover { color: oklch(80% 0.15 72); border-color: oklch(80% 0.15 72); } .ds-nav-links { display: flex; gap: 32px; } .ds-nav-link { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; color: oklch(70% 0.014 75); cursor: pointer; transition: color 0.2s, transform 0.2s; } .ds-nav-link:hover { color: oklch(95% 0.01 85); transform: translateY(-2px); }"
     },
     {
       "name": "AI Workshop Panel Cell",
@@ -87,7 +87,7 @@
       "refersTo": "panel-signature",
       "description": "One numbered tool cell from the signature 'How I work now' panel. Cells sit in a gap-px grid so 1px borders read as seams, not separate cards.",
       "html": "<div class=\"ds-ai-cell\"><span class=\"ds-ai-index\">01</span><h3 class=\"ds-ai-name\">Claude Code</h3><p class=\"ds-ai-use\">Agentic refactors and PR-ready changes across large codebases.</p></div>",
-      "css": ".ds-ai-cell { background: oklch(20.5% 0.015 70); padding: 24px; transition: background 0.2s; } .ds-ai-cell:hover { background: oklch(24% 0.017 70); } .ds-ai-index { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 500; font-size: 0.875rem; color: oklch(80% 0.15 72); } .ds-ai-name { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.02em; color: oklch(95% 0.01 85); margin: 16px 0 0; } .ds-ai-use { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; line-height: 1.75; color: oklch(64% 0.014 75); margin: 12px 0 0; }"
+      "css": ".ds-ai-cell { background: oklch(20.5% 0.015 70); padding: 24px; transition: background 0.2s; } .ds-ai-cell:hover { background: oklch(24% 0.017 70); } .ds-ai-index { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 500; font-size: 0.875rem; color: oklch(80% 0.15 72); } .ds-ai-name { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.02em; color: oklch(95% 0.01 85); margin: 16px 0 0; } .ds-ai-use { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; line-height: 1.75; color: oklch(70% 0.014 75); margin: 12px 0 0; }"
     }
   ],
   "narrative": {

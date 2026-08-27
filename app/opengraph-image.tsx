@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
-import { yearOfExperience } from '@/data/content';
+import { siteConfig } from '@/data/site';
 
-export const alt = 'Hassan Mohamed — Senior Full Stack Developer';
+export const alt = `${siteConfig.name}, ${siteConfig.title}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -28,7 +28,7 @@ export default function OpengraphImage() {
               letterSpacing: '0.05em',
             }}
           >
-            {`${yearOfExperience}+ YEARS`}
+            PRODUCT ENGINEERING
           </div>
         </div>
         <div
@@ -40,7 +40,7 @@ export default function OpengraphImage() {
             marginBottom: '24px',
           }}
         >
-          Hassan Mohamed
+          {siteConfig.name}
         </div>
         <div
           style={{
@@ -49,7 +49,7 @@ export default function OpengraphImage() {
             fontWeight: 500,
           }}
         >
-          Senior Full Stack Developer
+          {siteConfig.title}
         </div>
         <div
           style={{

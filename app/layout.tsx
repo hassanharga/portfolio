@@ -1,11 +1,10 @@
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { contact } from '@/data/content';
+import { siteConfig } from '@/data/site';
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Inter } from 'next/font/google';
 import './globals.css';
-
-const SITE_URL = 'https://hassanharga.vercel.app';
 
 const display = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -20,36 +19,13 @@ const sans = Inter({
   display: 'swap',
 });
 
-const description = `Hassan Mohamed — Senior Full Stack Developer building scalable web apps in Node.js, React, Next.js & Go.`;
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: 'Hassan Mohamed | Senior Full Stack Developer',
-  description,
-  keywords: [
-    'Hassan Mohamed',
-    'Hassan Mohamed developer',
-    'Hassan Mohamed full stack',
-    'Hassan Mohamed Egypt',
-    'Hassan Harga',
-    'Senior Full Stack Developer',
-    'Full Stack Developer',
-    'Full Stack Developer Egypt',
-    'Node.js developer',
-    'React developer',
-    'Angular developer',
-    'Next.js developer',
-    'Go developer',
-    'TypeScript developer',
-    'Backend developer',
-    'Frontend developer',
-    'Microservices',
-    'AWS developer',
-    'Remote developer',
-  ],
-  authors: [{ name: 'Hassan Mohamed' }],
-  creator: 'Hassan Mohamed',
-  publisher: 'Hassan Mohamed',
+  metadataBase: new URL(siteConfig.url),
+  title: `${siteConfig.name} | ${siteConfig.title}`,
+  description: siteConfig.description,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   alternates: {
     canonical: '/',
   },
@@ -65,26 +41,25 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Hassan Mohamed | Senior Full Stack Developer',
-    description,
-    url: SITE_URL,
-    siteName: 'Hassan Mohamed — Senior Full Stack Developer',
-    locale: 'en_US',
+    title: `${siteConfig.name} | ${siteConfig.title}`,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: `${siteConfig.name} | ${siteConfig.title}`,
+    locale: siteConfig.locale,
     type: 'website',
     images: [
       {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Hassan Mohamed — Senior Full Stack Developer',
+        alt: `${siteConfig.name}, ${siteConfig.title}`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hassan Mohamed | Senior Full Stack Developer',
-    description,
-    creator: '@hassanharga',
+    title: `${siteConfig.name} | ${siteConfig.title}`,
+    description: siteConfig.description,
     images: ['/opengraph-image'],
   },
 };
@@ -94,16 +69,15 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Person',
-      name: 'Hassan Mohamed',
-      url: SITE_URL,
-      image: `${SITE_URL}/opengraph-image`,
-      jobTitle: 'Senior Full Stack Developer',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      image: `${siteConfig.url}/images/avatar.png`,
+      jobTitle: siteConfig.title,
       email: `mailto:${contact.email}`,
       telephone: contact.phone,
       address: {
         '@type': 'PostalAddress',
         addressCountry: 'EG',
-        addressRegion: contact.location,
       },
       sameAs: [contact.linkedin, contact.github],
       knowsAbout: [
@@ -122,9 +96,9 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      url: SITE_URL,
-      name: 'Hassan Mohamed — Senior Full Stack Developer',
-      inLanguage: 'en',
+      url: siteConfig.url,
+      name: `${siteConfig.name} | ${siteConfig.title}`,
+      inLanguage: siteConfig.language,
     },
   ],
 };

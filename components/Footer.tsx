@@ -1,5 +1,3 @@
-'use client';
-
 import { heroContent } from '@/data/content';
 
 export default function Footer() {

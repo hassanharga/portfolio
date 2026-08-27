@@ -21,7 +21,6 @@ export default function Hero() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--accent)]"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--success)] opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--success)]" />
             </span>
             Available for senior full stack and backend roles
@@ -31,8 +30,8 @@ export default function Hero() {
             variants={revealUp}
             className="font-display max-w-4xl text-5xl font-semibold leading-[1.02] text-[var(--foreground)] sm:text-6xl lg:text-7xl"
           >
-            {heroContent.name} builds product systems that{' '}
-            <span className="text-[var(--primary)]">survive real traffic.</span>
+            {heroContent.name} builds product systems from{' '}
+            <span className="text-[var(--primary)]">interface to infrastructure.</span>
           </motion.h1>
 
           <motion.h2
@@ -107,7 +106,6 @@ export default function Hero() {
             <Image
               src="/images/avatar.png"
               alt="Hassan Mohamed"
-              loading="eager"
               width={520}
               height={620}
               className="aspect-[4/5] w-full object-cover"
@@ -127,8 +125,12 @@ export default function Hero() {
         transition={{ delay: 1, duration: 1 }}
         className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 sm:block"
       >
-        <a href="#skills" className="block text-[var(--muted)] transition-colors hover:text-[var(--primary)]">
-          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a
+          href="#portfolio"
+          aria-label="Jump to selected work"
+          className="block rounded-md text-[var(--muted)] transition-colors hover:text-[var(--primary)]"
+        >
+          <svg aria-hidden="true" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </a>

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { education, experience, yearOfExperience, cvUrl } from '@/data/content';
+import { education, experience, cvUrl } from '@/data/content';
 import { revealUp, staggerContainer } from './animations';
 
 export default function Resume() {
@@ -17,7 +17,7 @@ export default function Resume() {
         >
           <div>
             <p className="mb-3 text-sm uppercase tracking-[0.18em] text-[var(--primary)]">Experience</p>
-            <h2 className="font-display text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">{yearOfExperience}+ years of delivery</h2>
+            <h2 className="font-display text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">Experience across the stack</h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-[var(--muted-strong)] lg:pt-10">
             A backend-leaning full stack path across startups, agencies, telecom, and marketplace products.
@@ -39,7 +39,7 @@ export default function Resume() {
             >
               <div>
                 <p className="text-sm font-medium text-[var(--primary)]">{exp.period}</p>
-                <h3 className="font-display mt-2 text-2xl font-semibold text-[var(--foreground)]">{exp.role} — {exp.company}</h3>
+                <h3 className="font-display mt-2 text-2xl font-semibold text-[var(--foreground)]">{exp.role} at {exp.company}</h3>
                 <p className="mt-2 text-sm text-[var(--muted)]">
                   {exp.company} · {exp.location}
                 </p>

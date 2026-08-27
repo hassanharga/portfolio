@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { projects } from '@/data/content';
 import { revealUp, staggerContainer } from './animations';
 
-const orderedProjects = [...projects].sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
+const featuredProjects = projects.filter((project) => project.featured);
+const additionalProjects = projects.filter((project) => !project.featured);
 
 export default function Portfolio() {
   return (
@@ -32,25 +33,24 @@ export default function Portfolio() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
-          className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3"
+          className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] lg:grid-cols-2"
         >
-          {orderedProjects.map((project, index) => {
+          {featuredProjects.map((project) => {
             const tags = project.displayTags ?? project.tags.slice(0, 5);
 
             return (
               <motion.article
                 key={project.title}
                 variants={revealUp}
-                className="group flex h-full flex-col overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] transition-colors hover:border-[var(--primary)]/70"
+                className="group flex h-full flex-col overflow-hidden bg-[var(--surface)]"
               >
                 {project.image ? (
-                  <div className="relative h-52 overflow-hidden bg-[var(--background-raised)]">
+                  <div className="relative h-64 overflow-hidden bg-[var(--background-raised)]">
                     <Image
-                      loading={index < 2 ? 'eager' : 'lazy'}
                       src={project.image}
                       fill
-                      alt={`${project.title} project visual`}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                      alt=""
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>
@@ -69,11 +69,7 @@ export default function Portfolio() {
                     <div className="font-display text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
                       {project.title}
                     </div>
-                    {project.featured && (
-                      <span className="shrink-0 rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--accent)]">
-                        Featured
-                      </span>
-                    )}
+                    <span className="shrink-0 rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--accent)]">Featured</span>
                   </div>
 
                   <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{project.description}</p>
@@ -99,7 +95,7 @@ export default function Portfolio() {
                       className="inline-flex items-center gap-2 text-sm font-medium text-[var(--primary)] transition-colors hover:text-[var(--accent)]"
                     >
                       {project.linkLabel ?? 'Open project'}
-                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -123,6 +119,74 @@ export default function Portfolio() {
               </motion.article>
             );
           })}
+        </motion.div>
+
+        <motion.div
+          variants={revealUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          className="mt-20"
+        >
+          <div className="mb-6 flex items-end justify-between gap-6">
+            <h3 className="font-display text-2xl font-semibold text-[var(--foreground)] sm:text-3xl">More product work</h3>
+            <p className="hidden text-sm text-[var(--muted)] sm:block">Selected client and internal products</p>
+          </div>
+
+          <div className="border-y border-[var(--border)]">
+            {additionalProjects.map((project, index) => {
+              const tags = project.displayTags ?? project.tags.slice(0, 4);
+
+              return (
+                <article
+                  key={project.title}
+                  className="group grid gap-5 border-b border-[var(--border)] py-7 last:border-b-0 md:grid-cols-[7rem_1fr_auto] md:items-center md:gap-8"
+                >
+                  <div className="relative h-24 overflow-hidden rounded-md border border-[var(--border)] bg-[var(--background-raised)]">
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        fill
+                        alt=""
+                        sizes="112px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                    ) : (
+                      <div className="font-display flex h-full items-center justify-center text-sm text-[var(--muted)]">
+                        {String(index + 1).padStart(2, '0')}
+                      </div>
+                    )}
+                  </div>
+
+                  <div>
+                    <h4 className="font-display text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
+                      {project.title}
+                    </h4>
+                    <p className="mt-2 max-w-2xl text-sm leading-7 text-[var(--muted)]">{project.description}</p>
+                    <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
+                      {tags.slice(0, 4).map((tag) => (
+                        <span key={tag} className="text-xs text-[var(--muted-strong)]">
+                          {tag.trim()}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-self-start gap-2 rounded-md text-sm font-medium text-[var(--primary)] transition-colors hover:text-[var(--accent)] md:justify-self-end"
+                  >
+                    {project.linkLabel ?? 'Open project'}
+                    <svg aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
+                </article>
+              );
+            })}
+          </div>
         </motion.div>
       </div>
     </section>

@@ -158,8 +158,9 @@ export default function Contact() {
                   id="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  autoComplete="name"
                   required
-                  className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--background-raised)] px-4 py-3 text-[var(--foreground)] placeholder:text-[var(--muted)] transition-colors focus:border-[var(--primary)] focus:outline-none"
+                  className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--background-raised)] px-4 py-3 text-[var(--foreground)] placeholder:text-[var(--muted)] transition-colors focus:border-[var(--primary)]"
                   placeholder="Your name"
                 />
               </div>
@@ -173,8 +174,9 @@ export default function Contact() {
                   id="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  autoComplete="email"
                   required
-                  className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--background-raised)] px-4 py-3 text-[var(--foreground)] placeholder:text-[var(--muted)] transition-colors focus:border-[var(--primary)] focus:outline-none"
+                  className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--background-raised)] px-4 py-3 text-[var(--foreground)] placeholder:text-[var(--muted)] transition-colors focus:border-[var(--primary)]"
                   placeholder="your@email.com"
                 />
               </div>
@@ -188,9 +190,10 @@ export default function Contact() {
                 id="message"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                autoComplete="off"
                 required
                 rows={6}
-                className="mt-2 w-full resize-none rounded-lg border border-[var(--border)] bg-[var(--background-raised)] px-4 py-3 text-[var(--foreground)] placeholder:text-[var(--muted)] transition-colors focus:border-[var(--primary)] focus:outline-none"
+                className="mt-2 w-full resize-none rounded-lg border border-[var(--border)] bg-[var(--background-raised)] px-4 py-3 text-[var(--foreground)] placeholder:text-[var(--muted)] transition-colors focus:border-[var(--primary)]"
                 placeholder="Tell me about the role, project, or team need."
               />
             </div>
@@ -202,7 +205,7 @@ export default function Contact() {
                     ? 'border-[var(--success)]/40 bg-[var(--success)]/10 text-[var(--success)]'
                     : 'border-[var(--danger)]/40 bg-[var(--danger)]/10 text-[var(--danger)]'
                 }`}
-                role="status"
+                role={status.type === 'error' ? 'alert' : 'status'}
               >
                 {status.message}
               </p>
