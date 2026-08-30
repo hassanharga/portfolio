@@ -69,10 +69,12 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Person',
+      '@id': siteConfig.personId,
       name: siteConfig.name,
       url: siteConfig.url,
       image: `${siteConfig.url}/images/avatar.png`,
       jobTitle: siteConfig.title,
+      description: siteConfig.description,
       email: `mailto:${contact.email}`,
       telephone: contact.phone,
       address: {
@@ -96,9 +98,13 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
+      '@id': siteConfig.websiteId,
       url: siteConfig.url,
       name: `${siteConfig.name} | ${siteConfig.title}`,
       inLanguage: siteConfig.language,
+      publisher: {
+        '@id': siteConfig.personId,
+      },
     },
   ],
 };

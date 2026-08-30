@@ -47,6 +47,20 @@ Hassan Mohamed is a senior full stack engineer specializing in Node.js, React, N
 ## Links
 
 - [Website](https://hassanharga.vercel.app)
+- [About](https://hassanharga.vercel.app/about)
+- [HTML resume](https://hassanharga.vercel.app/resume)
 - [CV](https://flowcv.com/resume/q851s66nns)
 - [LinkedIn](https://linkedin.com/in/hassanharga)
 - [GitHub](https://github.com/hassanharga)
+
+## Portfolio Pages
+
+- [Yassir](https://hassanharga.vercel.app/work/yassir)
+- [GO-Social-API](https://hassanharga.vercel.app/work/go-social-api)
+- [ITBA](https://hassanharga.vercel.app/work/itba)
+- [Dental Axess](https://hassanharga.vercel.app/work/dental-axess)
+- [Twint Super Deals](https://hassanharga.vercel.app/work/twint-super-deals)
+- [Rateel](https://hassanharga.vercel.app/work/rateel)
+- [STC Dashboard](https://hassanharga.vercel.app/work/stc-dashboard)
+- [Saldwich](https://hassanharga.vercel.app/work/saldwich)
+- [Vodafone Germany](https://hassanharga.vercel.app/work/vodafone-germany)

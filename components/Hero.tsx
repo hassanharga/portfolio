@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { heroContent, cvUrl } from '@/data/content';
+import { heroContent } from '@/data/content';
 import { revealTransition, revealUp, staggerContainer } from './animations';
 
 export default function Hero() {
@@ -80,14 +80,12 @@ export default function Hero() {
               Review projects
             </motion.a>
             <motion.a
-              href={cvUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/resume"
               className="inline-flex items-center gap-2 text-sm font-medium text-[var(--primary)] transition-colors hover:text-[var(--accent)]"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              Download CV
+              Read HTML resume
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -113,7 +111,7 @@ export default function Hero() {
             />
             <div className="border-t border-[var(--border)] bg-[var(--background-raised)] p-5">
               <p className="text-sm uppercase tracking-[0.18em] text-[var(--muted)]">Current focus</p>
-              <p className="mt-2 text-lg font-medium text-[var(--foreground)]">Full stack product engineering</p>
+              <p className="mt-2 text-lg font-medium text-[var(--foreground)]">Backend systems and product delivery</p>
             </div>
           </div>
         </motion.div>

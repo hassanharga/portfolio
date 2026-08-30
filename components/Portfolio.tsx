@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { projects } from '@/data/content';
 import { revealUp, staggerContainer } from './animations';
 
@@ -66,9 +67,9 @@ export default function Portfolio() {
 
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-start justify-between gap-4">
-                    <div className="font-display text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
-                      {project.title}
-                    </div>
+                    <h3 className="font-display text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
+                      <Link href={`/work/${project.slug}`}>{project.title}</Link>
+                    </h3>
                     <span className="shrink-0 rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--accent)]">Featured</span>
                   </div>
 
@@ -160,7 +161,7 @@ export default function Portfolio() {
 
                   <div>
                     <h4 className="font-display text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
-                      {project.title}
+                      <Link href={`/work/${project.slug}`}>{project.title}</Link>
                     </h4>
                     <p className="mt-2 max-w-2xl text-sm leading-7 text-[var(--muted)]">{project.description}</p>
                     <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">

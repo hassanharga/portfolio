@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { navLinks, cvUrl } from '@/data/content';
+import { navLinks } from '@/data/content';
 import { revealTransition } from './animations';
 
 export default function Navigation() {
@@ -52,9 +52,7 @@ export default function Navigation() {
               </motion.a>
             ))}
             <motion.a
-              href={cvUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/resume"
               className="rounded-md border border-[var(--border-strong)] px-4 py-1.5 text-sm font-medium text-[var(--foreground)] transition-colors hover:border-[var(--primary)] hover:text-[var(--primary)]"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.96 }}
@@ -105,13 +103,11 @@ export default function Navigation() {
                   </a>
                 ))}
                 <a
-                  href={cvUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/resume"
                   className="block py-2 font-medium text-[var(--primary)] transition-colors hover:text-[var(--accent)]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Resume ↗
+                  Resume
                 </a>
               </div>
             </div>

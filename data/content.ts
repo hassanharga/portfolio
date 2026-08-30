@@ -2,8 +2,8 @@ export const cvUrl = 'https://flowcv.com/resume/q851s66nns';
 
 export const heroContent = {
   name: 'Hassan Mohamed',
-  title: 'Senior Full Stack Developer',
-  bio: 'Senior full stack engineer building product systems across marketplace, telecom, mobility, and SaaS. Strongest in Node.js, React, Next.js, cloud deployments, APIs, and the integration work that turns product ideas into shipped software.',
+  title: 'Senior Backend-Focused Full-Stack Engineer',
+  bio: 'Senior backend-focused full-stack engineer building product systems across marketplace, telecom, mobility, and SaaS. Strongest in Node.js, TypeScript, React, Next.js, cloud deployments, APIs, and the integration work that turns product ideas into shipped software.',
   proofPoints: ['Backend systems', 'Product interfaces', 'Cloud delivery'],
 };
 
@@ -154,8 +154,11 @@ export const education = [
 
 export const projects = [
   {
+    slug: 'yassir',
     title: 'Yassir',
     description: 'Ride-hailing product work across backend services, delivery tooling, and platform operations.',
+    contribution:
+      'Build and own Node.js microservices, system architecture, delivery tooling, and operational visibility for a mobility platform.',
     outcome: 'Backend engineering for a regional mobility platform with microservice-scale delivery needs.',
     tags: [
       'TypeScript ',
@@ -194,9 +197,12 @@ export const projects = [
     github: '',
   },
   {
+    slug: 'go-social-api',
     title: 'GO-Social-API',
     description:
       'A robust social networking API built with Go, featuring user authentication, post management, commenting system, follower relationships, and user feeds.',
+    contribution:
+      'Designed this portfolio API around authentication, posts, comments, follower relationships, feeds, PostgreSQL, Redis, Swagger, and Docker.',
     outcome: 'A portfolio API project showing backend design, caching, documentation, and deployable infrastructure.',
     tags: ['GO', 'PostgreSQL', 'Redis', 'Swagger', 'Docker'],
     displayTags: ['Go', 'PostgreSQL', 'Redis', 'Swagger', 'Docker'],
@@ -207,8 +213,11 @@ export const projects = [
     github: 'https://github.com/hassanharga/go-social',
   },
   {
+    slug: 'itba',
     title: 'ITBA',
     description: 'Eco-tourism application for exploring North Reserve locations, wildlife, and culturally significant sites.',
+    contribution:
+      'Worked across the public Next.js experience and supporting Node.js services for an eco-tourism product.',
     outcome: 'Tourism product build spanning a public Next.js experience and supporting backend services.',
     tags: ['React', 'Next.js', 'Node.js', 'Typescript', 'Material-UI', 'Azure'],
     displayTags: ['React', 'Next.js', 'Node.js', 'TypeScript', 'Azure'],
@@ -218,8 +227,11 @@ export const projects = [
     github: '',
   },
   {
+    slug: 'dental-axess',
     title: 'Dental Axess',
     description: 'Digital dentistry product catalogue and workflow for treatment providers.',
+    contribution:
+      'Worked on Angular and Node.js product workflows backed by MongoDB for a digital dentistry platform.',
     outcome: 'Product workflow experience for dental technology buyers and treatment providers.',
     tags: ['Angular', 'Node.js', 'MongoDB', 'TypeScript', 'Docker', 'SCSS'],
     displayTags: ['Angular', 'Node.js', 'MongoDB', 'TypeScript', 'Docker'],
@@ -229,8 +241,11 @@ export const projects = [
     github: '',
   },
   {
+    slug: 'twint-super-deals',
     title: 'Twint Super Deals',
     description: 'Deals experience for discounts and promotions available through the TWINT app.',
+    contribution:
+      'Worked across Node.js backend services, Angular interfaces, RabbitMQ queues, MongoDB, Docker, and GCP.',
     outcome: 'Deals platform work involving backend services, Angular interfaces, queues, and cloud deployment.',
     tags: [
       'Node.js',
@@ -255,8 +270,11 @@ export const projects = [
     github: '',
   },
   {
+    slug: 'rateel',
     title: 'Rateel',
     description: 'Audio recognition app that identifies Quran reciters and the surah being recited.',
+    contribution:
+      'Worked on a TypeScript and Angular product backed by Node.js, DynamoDB, and AWS services.',
     outcome: 'Mobile-backed product experience using AWS services and TypeScript application code.',
     tags: [
       'Node.js',
@@ -275,8 +293,11 @@ export const projects = [
     github: '',
   },
   {
+    slug: 'stc-dashboard',
     title: 'STC Dashboard',
     description: 'Internal dashboard for mobile delivery progress, analytics, and test-team workflows.',
+    contribution:
+      'Designed and built the internal team-management and delivery dashboard, including GitHub, Jira, Slack, analytics, and real-time workflow integrations.',
     outcome: 'Internal dashboard for delivery visibility, analytics, and mobile team coordination.',
     tags: [
       'Node.js',
@@ -295,8 +316,11 @@ export const projects = [
     github: '',
   },
   {
+    slug: 'saldwich',
     title: 'Saldwich',
     description: 'Customer app and operations dashboard for restaurant branches, delivery, menus, and location-based orders.',
+    contribution:
+      'Delivered product work across the customer app and operations dashboard using TypeScript, Node.js, React, React Native, DynamoDB, and AWS.',
     outcome: 'Restaurant operations platform spanning customer app, dashboard, delivery, and menu management.',
     tags: [
       'TypeScript',
@@ -318,8 +342,11 @@ export const projects = [
     github: '',
   },
   {
+    slug: 'vodafone-germany',
     title: 'Vodafone Germany',
     description: 'Customer-facing web delivery for Vodafone Germany.',
+    contribution:
+      'Contributed TypeScript and Angular delivery to customer-facing Vodafone Germany experiences.',
     outcome: 'Enterprise web delivery for Vodafone Germany customer-facing experiences.',
     tags: ['TypeScript', 'JavaScript', 'Angular', 'JIRA'],
     displayTags: ['TypeScript', 'Angular', 'JavaScript', 'Jira'],
@@ -379,6 +406,7 @@ export function getWhatsAppUrl() {
 
 export const navLinks = [
   { name: 'Home', href: '#home' },
+  { name: 'About', href: '/about' },
   { name: 'Work', href: '#portfolio' },
   { name: 'Experience', href: '#resume' },
   { name: 'Capabilities', href: '#skills' },
