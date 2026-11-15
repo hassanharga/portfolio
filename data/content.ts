@@ -18,12 +18,12 @@ export const skills = {
   backendSystems: {
     title: 'Backend systems',
     summary: 'Design APIs and services that stay maintainable under real product traffic.',
-    items: ['Node.js', 'NestJS', 'Express', 'Go', 'REST APIs', 'GraphQL', 'BullMQ', 'Google Cloud Pub/Sub'],
+    items: ['Node.js', 'NestJS', 'Express', 'Go', 'REST APIs', 'GraphQL', 'Socket.io', 'BullMQ', 'RabbitMQ', 'Google Cloud Pub/Sub'],
   },
   dataInfrastructure: {
     title: 'Data & infrastructure',
     summary: 'Choose pragmatic storage, caching, and deployment paths for the problem.',
-    items: ['PostgreSQL', 'MongoDB', 'Redis', 'DynamoDB', 'SQLite', 'Prisma', 'Docker', 'AWS', 'Google Cloud', 'CI/CD'],
+    items: ['PostgreSQL', 'MongoDB', 'Redis', 'DynamoDB', 'SQLite', 'Elasticsearch', 'Prisma', 'Docker', 'NGINX', 'AWS', 'Google Cloud', 'GitHub Actions', 'AWS CodePipeline', 'Azure DevOps', 'CI/CD'],
   },
   engineeringLeadership: {
     title: 'Engineering leadership',
@@ -67,13 +67,14 @@ export const experience = [
     location: 'Remote',
     period: 'Oct 2025 - Present',
     description: [
-      'Share ownership of critical mobility services across dispatch, location, and mapping within the Core team, covering delivery, reliability, and ongoing maintenance.',
-      'Guide engineers across teams on service integration and usage, and help shape technical decisions through RFCs that document requirements, design options, and tradeoffs.',
-      'Collaborate with another team to develop a new service, aligning its design with consumer needs and preparing for ongoing ownership by Core.',
-      'Redesigned dispatch pool joins to use atomic MongoDB updates, reducing concurrency conflicts and repeated database reads while preserving job consistency during concurrent requests.',
-      'Contributed to MongoDB query and index optimization, reducing one query’s execution time from 600 ms to 3 ms as measured in MongoDB Atlas. Worked with MongoDB’s team to right-size the cluster from M400 to M200, reducing cluster cost by 50%.',
-      'Built and extended an internal Next.js operations dashboard for inspecting dispatch behavior and managing dispatch strategies.',
-      'Improved service reliability and diagnostics through automated testing, fault handling, and changes to location-service shutdown and error logging.',
+      'Share ownership of critical Node.js and NestJS mobility services across dispatch, location, and mapping within the Core team, covering delivery, reliability, and ongoing maintenance.',
+      'Guide engineers across teams on service integration and help shape technical decisions through RFCs covering requirements, design options, and tradeoffs.',
+      'Co-develop a new service with another team, aligning its design with consuming teams’ integration needs and preparing for ongoing ownership by Core.',
+      'Replaced version-checked updates in dispatch pool joins with atomic MongoDB appends, reducing write conflicts and repeated database reads under concurrent requests.',
+      'Contributed to MongoDB query and index optimization, reducing one query’s execution time from 600 ms to 3 ms, measured in MongoDB Atlas.',
+      'Worked with MongoDB’s team to right-size the cluster from M400 to M200, reducing cluster cost by 50%.',
+      'Built and extended an internal Next.js operations dashboard for investigating dispatch behavior and managing dispatch strategies.',
+      'Improved service reliability through automated testing, fault handling, graceful shutdown for the location service, and clearer diagnostic logging.',
     ],
   },
   {
@@ -83,10 +84,10 @@ export const experience = [
     location: 'Remote',
     period: 'Feb 2024 - Oct 2025',
     description: [
-      'Built React and Next.js applications with server-side rendering, using Redux and Context API for state management.',
-      'Developed Node.js backend services with authentication, request validation, structured logging, and error handling.',
+      'Built the Next.js frontend and Node.js backend services for ITBA, an eco-tourism platform covering nature reserves, wildlife, and cultural sites. Delivered releases through Azure DevOps for client-managed deployment.',
+      'Developed a Node.js and Elasticsearch search service for the STC app, enabling search across its content and features.',
+      'Built a React application for an internal affairs client, covering request tracking and reporting workflows.',
       'Integrated dotCMS as a headless CMS through GraphQL, allowing editorial content updates independently of application releases.',
-      'Managed Dockerized deployments on AWS EC2 with autoscaling, supporting application availability and release delivery.',
     ],
   },
   {
@@ -96,9 +97,9 @@ export const experience = [
     location: 'Cairo, Egypt',
     period: 'Sep 2023 - Feb 2024',
     description: [
-      'Upgraded production applications across TypeScript, React, Angular, and Node.js, including state management with Redux, Zustand, and NgRx.',
-      'Introduced Storybook for React and Angular to document shared components and support reuse and testing.',
-      'Developed MongoDB-backed application workflows to support evolving product requirements.',
+      'Upgraded framework and library versions across production TypeScript, React, Angular, and Node.js applications, including Redux, Zustand, and NgRx state management, and introduced Storybook for shared components.',
+      'Developed Node.js services and Angular features for TWINT Super Deals, the discounts and promotions experience in the TWINT app, using MongoDB, RabbitMQ, Docker, and Google Cloud.',
+      'Built Angular and Node.js product workflows backed by MongoDB for Dental Axess, a digital dentistry product catalogue for treatment providers.',
       'Mentored junior engineers through onboarding, code reviews, and guidance on implementation and maintainability.',
     ],
   },
@@ -112,7 +113,7 @@ export const experience = [
       'Designed and built an internal team-management and delivery dashboard using TypeScript, Node.js, Angular, and React.',
       'Integrated GitHub, Jira, and Slack to automate task tracking, branch retrieval, and build notifications.',
       'Implemented real-time notifications and live-data features using Socket.io and Node.js to support coordination across web and mobile releases.',
-      'Deployed and managed applications using AWS Lambda, EC2, S3, and Route53, handling hosting, storage, and domain configuration.',
+      'Deployed and managed applications on AWS Lambda, EC2, S3, and Route 53.',
     ],
   },
   {
@@ -122,10 +123,10 @@ export const experience = [
     location: 'Cairo, Egypt',
     period: 'Apr 2021 - Feb 2022',
     description: [
-      'Developed responsive React and Angular interfaces for enterprise telecom workflows, focusing on accessibility, performance, and consistent behavior.',
+      'Developed responsive React and Angular interfaces for Vodafone Germany’s customer-facing web platform.',
+      'Built features in the platform’s tariff and payment sections, among other product areas.',
+      'Contributed reusable components to the team’s internal UI library and used them across the platform, reducing repeated implementation.',
       'Added Jest and Angular Testing Library coverage to verify shared interface behavior and guard against regressions.',
-      'Contributed reusable components to an internal UI library, reducing repeated implementation across teams.',
-      'Collaborated with the team through sprint planning, daily stand-ups, and retrospectives to align implementation with delivery priorities.',
     ],
   },
   {
@@ -135,7 +136,8 @@ export const experience = [
     location: 'Cairo, Egypt',
     period: 'Apr 2019 - Apr 2021',
     description: [
-      'Delivered full-stack web applications using TypeScript, React, Angular, Node.js, MongoDB, and AWS services including DynamoDB, EC2, and S3.',
+      'Built core React, Redux, and TypeScript features for Sijil, a healthcare booking platform for clinics, labs, and imaging centers.',
+      'Developed booking, patient registration, and shift-scheduling workflows with real-time updates over Socket.io, plus Arabic and English localization and reports for labs and imaging centers.',
       'Built mobile applications with React Native and Expo alongside web products.',
       'Developed real-time dashboards and chat features using Node.js and Socket.io, with Redis for caching and session management.',
       'Established CI/CD pipelines using AWS CodePipeline and GitHub Actions to automate build, test, and deployment workflows.',
@@ -163,7 +165,7 @@ export const projects = [
     title: 'Yassir',
     description: 'Ride-hailing product work across backend services, delivery tooling, and platform operations.',
     contribution:
-      'Share ownership of dispatch, location, and mapping services, guide cross-team integrations through RFCs, and build a Next.js operations dashboard. Redesigned pool joins with atomic MongoDB updates to reduce conflicts and repeated reads.',
+      'Share Core-team ownership of critical Node.js and NestJS services across dispatch, location, and mapping, guide cross-team integrations, and help shape technical decisions through RFCs. Replaced version-checked updates in dispatch pool joins with atomic MongoDB appends and built an internal Next.js operations dashboard.',
     outcome: 'Core mobility services and operations tooling. Contributed to query and index optimization that reduced one query from 600 ms to 3 ms in MongoDB Atlas, and cluster right-sizing from M400 to M200 that halved cluster cost.',
     tags: [
       'TypeScript ',
@@ -222,10 +224,10 @@ export const projects = [
     slug: 'itba',
     category: 'Professional',
     title: 'ITBA',
-    description: 'Eco-tourism application for exploring North Reserve locations, wildlife, and culturally significant sites.',
+    description: 'Eco-tourism platform for exploring nature reserves, wildlife, and cultural sites.',
     contribution:
-      'Worked across the public Next.js experience and supporting Node.js services for an eco-tourism product.',
-    outcome: 'Tourism product build spanning a public Next.js experience and supporting backend services.',
+      'Built the Next.js frontend and Node.js backend services for ITBA, an eco-tourism platform covering nature reserves, wildlife, and cultural sites. Delivered releases through Azure DevOps for client-managed deployment.',
+    outcome: 'Next.js frontend and Node.js backend services delivered through Azure DevOps for client-managed deployment.',
     tags: ['React', 'Next.js', 'Node.js', 'Typescript', 'Material-UI', 'Azure'],
     displayTags: ['React', 'Next.js', 'Node.js', 'TypeScript', 'Azure'],
     image: '/images/itba.jpg',
@@ -365,10 +367,10 @@ export const projects = [
     title: 'Vodafone Germany',
     description: 'Customer-facing web delivery for Vodafone Germany.',
     contribution:
-      'Contributed TypeScript and Angular delivery to customer-facing Vodafone Germany experiences.',
+      'Developed responsive React and Angular interfaces for Vodafone Germany’s customer-facing platform, including tariff and payment features, reusable components, and automated interface tests.',
     outcome: 'Enterprise web delivery for Vodafone Germany customer-facing experiences.',
-    tags: ['TypeScript', 'JavaScript', 'Angular', 'JIRA'],
-    displayTags: ['TypeScript', 'Angular', 'JavaScript', 'Jira'],
+    tags: ['TypeScript', 'JavaScript', 'React', 'Angular', 'JIRA'],
+    displayTags: ['TypeScript', 'React', 'Angular', 'JavaScript', 'Jira'],
     image: '/images/vodafone.png',
     link: 'https://www.vodafone.de/',
     linkLabel: 'Visit site',

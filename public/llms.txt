@@ -4,24 +4,24 @@
 
 ## About
 
-Hassan Mohamed is a senior full-stack engineer working with React, Next.js, Angular, TypeScript, Node.js, and NestJS. He has shipped production systems across marketplace, telecom, mobility, and SaaS products. He shares ownership of critical mobility services, guides cross-team integrations, and contributes to RFC-based technical decisions.
+Hassan Mohamed is a senior full-stack engineer working with React, Next.js, Angular, TypeScript, Node.js, and NestJS. He has shipped production systems across marketplace, telecom, mobility, and SaaS products. Within Yassir’s Core team, he shares ownership of critical Node.js and NestJS mobility services, guides cross-team integrations, and helps shape technical decisions through RFCs.
 
 ## Skills
 
 - **Product engineering**: React, Next.js, Angular, React Native, TypeScript, Redux, React Query, Tailwind CSS, Storybook
-- **Backend systems**: Node.js, NestJS, Express, Go, REST APIs, GraphQL, BullMQ, Google Cloud Pub/Sub
-- **Data & infrastructure**: PostgreSQL, MongoDB, Redis, DynamoDB, SQLite, Prisma, Docker, AWS, Google Cloud, CI/CD
+- **Backend systems**: Node.js, NestJS, Express, Go, REST APIs, GraphQL, Socket.io, BullMQ, RabbitMQ, Google Cloud Pub/Sub
+- **Data & infrastructure**: PostgreSQL, MongoDB, Redis, DynamoDB, SQLite, Elasticsearch, Prisma, Docker, NGINX, AWS, Google Cloud, GitHub Actions, AWS CodePipeline, Azure DevOps, CI/CD
 - **Engineering leadership**: Code reviews, automated testing, domain-driven design, hexagonal architecture, RFCs, mentoring, cross-team delivery
 - **AI-augmented workflow**: Claude Code, OpenCode, Codex, implementation planning, codebase exploration, test generation, code review
 
 ## Experience
 
-- **Senior Full-Stack Developer** at Yassir (Oct 2025 - Present) — Core-team ownership of dispatch, location, and mapping services; RFCs, cross-team guidance, atomic MongoDB pool joins, and a Next.js operations dashboard
-- **Senior Full-Stack Developer** at InnovationTeam (Feb 2024 - Oct 2025) — React/Next.js applications with Node.js backend services, dotCMS headless CMS, Dockerized AWS deployments
-- **Senior Full-Stack Developer** at Modeso (Sep 2023 - Feb 2024) — TypeScript, React, Angular, Node.js modernization; introduced Storybook
+- **Senior Full-Stack Developer** at Yassir (Oct 2025 - Present) — Shared Core-team ownership of critical Node.js and NestJS dispatch, location, and mapping services across delivery, reliability, and maintenance; cross-team integration guidance and RFC-based technical decisions. Replaced version-checked updates in dispatch pool joins with atomic MongoDB appends and built a Next.js operations dashboard
+- **Senior Full-Stack Developer** at InnovationTeam (Feb 2024 - Oct 2025) — ITBA Next.js frontend and Node.js backend services, with Azure DevOps releases for client-managed deployment; Node.js/Elasticsearch search for the STC app; a React request-tracking application; dotCMS integration through GraphQL
+- **Senior Full-Stack Developer** at Modeso (Sep 2023 - Feb 2024) — TypeScript, React, Angular, and Node.js modernization; Storybook; TWINT Super Deals and Dental Axess product workflows; junior-engineer mentoring
 - **Full-Stack Developer** at InnovationTeam / STC (Feb 2022 - Sep 2023) — Team-management tool with GitHub/Jira/Slack integrations, real-time features
-- **Full-Stack Developer** at VOIS (Apr 2021 - Feb 2022) — React and Angular interfaces for enterprise telecom, Jest testing
-- **Full-Stack Developer** at Codiles (Apr 2019 - Apr 2021) — Full-stack TypeScript/React/Node.js applications, React Native mobile apps, CI/CD pipelines
+- **Full-Stack Developer** at VOIS (Apr 2021 - Feb 2022) — React and Angular interfaces for Vodafone Germany, including tariff and payment features, reusable UI components, and Jest/Angular Testing Library coverage
+- **Full-Stack Developer** at Codiles (Apr 2019 - Apr 2021) — React, Redux, and TypeScript features for Sijil healthcare booking, registration, scheduling, and localized reporting; React Native/Expo apps; Node.js/Socket.io dashboards and chat; AWS CodePipeline and GitHub Actions
 
 MongoDB work at Yassir: contributed to query and index optimization reducing one query from 600 ms to 3 ms in MongoDB Atlas, and worked with MongoDB’s team to right-size the cluster from M400 to M200, reducing cluster cost by 50%.
 
@@ -34,7 +34,7 @@ MongoDB work at Yassir: contributed to query and index optimization reducing one
 
 - [Yassir](https://yassir.com/) — Ride-hailing platform (Node.js, Microservices, MongoDB, Redis, Docker, GCP)
 - [GO-Social-API](https://github.com/hassanharga/go-social) — Social networking API in Go (Go, PostgreSQL, Redis, Swagger, Docker)
-- [ITBA](https://www.srfsh.com/) — Eco-tourism application (React, Next.js, Node.js, TypeScript, Azure)
+- [ITBA](https://www.srfsh.com/) — Eco-tourism platform with a Next.js frontend and Node.js backend, delivered through Azure DevOps for client-managed deployment
 - [Dental Axess](https://dentalaxess.com/products/xflow/) — Digital dentistry platform (Angular, Node.js, MongoDB, TypeScript, Docker)
 - [Twint Super Deals](https://deals.twint.ch/) — Deals platform (Node.js, MongoDB, RabbitMQ, Angular, GCP, Docker)
 
