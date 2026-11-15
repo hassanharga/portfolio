@@ -1,37 +1,39 @@
+import { additionalProjects } from './project-additions.ts';
+
 export const cvUrl = 'https://flowcv.com/resume/q851s66nns';
 
 export const heroContent = {
   name: 'Hassan Mohamed',
-  title: 'Senior Backend-Focused Full-Stack Engineer',
-  bio: 'Senior backend-focused full-stack engineer building product systems across marketplace, telecom, mobility, and SaaS. Strongest in Node.js, TypeScript, React, Next.js, cloud deployments, APIs, and the integration work that turns product ideas into shipped software.',
-  proofPoints: ['Backend systems', 'Product interfaces', 'Cloud delivery'],
+  title: 'Senior Full-Stack Engineer | React, Next.js, Node.js & TypeScript',
+  bio: 'Senior full-stack engineer with 7+ years building web applications and backend services across mobility, telecom, marketplace, and SaaS. I work with React, Next.js, TypeScript, Node.js, and NestJS, share ownership of critical mobility services, and guide cross-team integrations and RFC-based technical decisions.',
+  proofPoints: ['Frontend applications', 'Backend services', 'Cross-team delivery'],
 };
 
 export const skills = {
   productEngineering: {
     title: 'Product engineering',
     summary: 'Build product surfaces from interface to data model.',
-    items: ['React', 'Next.js', 'Angular', 'React Native', 'TypeScript'],
+    items: ['React', 'Next.js', 'Angular', 'React Native', 'TypeScript', 'Redux', 'React Query', 'Tailwind CSS', 'Storybook'],
   },
   backendSystems: {
     title: 'Backend systems',
     summary: 'Design APIs and services that stay maintainable under real product traffic.',
-    items: ['Node.js', 'Nest.js', 'Express.js', 'Go', 'Microservices'],
+    items: ['Node.js', 'NestJS', 'Express', 'Go', 'REST APIs', 'GraphQL', 'BullMQ', 'Google Cloud Pub/Sub'],
   },
   dataInfrastructure: {
     title: 'Data & infrastructure',
     summary: 'Choose pragmatic storage, caching, and deployment paths for the problem.',
-    items: ['PostgreSQL', 'MongoDB', 'Redis', 'DynamoDB', 'Docker', 'AWS', 'GCP', 'CI/CD'],
+    items: ['PostgreSQL', 'MongoDB', 'Redis', 'DynamoDB', 'SQLite', 'Prisma', 'Docker', 'AWS', 'Google Cloud', 'CI/CD'],
   },
   engineeringLeadership: {
     title: 'Engineering leadership',
     summary: 'Raise delivery quality through reviews, testing, mentoring, and clear tradeoffs.',
-    items: ['Code reviews', 'Unit testing', 'Architecture', 'Mentoring', 'Agile delivery'],
+    items: ['Code reviews', 'Automated testing', 'Domain-driven design', 'Hexagonal architecture', 'RFCs', 'Mentoring', 'Cross-team delivery'],
   },
   aiAugmented: {
     title: 'AI-augmented workflow',
-    summary: 'Use agentic coding tools daily to move faster while keeping human review and ownership.',
-    items: ['Claude Code', 'OpenCode', 'Codex', 'AI code review', 'Spec-to-PR', 'Test generation'],
+    summary: 'Use AI coding tools for planning, implementation, testing, and review, with responsibility for validating changes.',
+    items: ['Claude Code', 'Codex', 'OpenCode', 'Implementation planning', 'Codebase exploration', 'Test generation', 'Code review'],
   },
 };
 
@@ -39,102 +41,104 @@ export const aiWorkflow = {
   eyebrow: 'How I work now',
   title: 'AI-augmented delivery, engineer in the loop',
   intro:
-    'Agentic coding tools are part of my daily workflow. They speed up the mechanical work so I can spend more time on architecture, tradeoffs, and review. Every change still ships through tests, human review, and clear ownership.',
+    'I use Claude Code, Codex, and OpenCode to explore codebases, plan changes, implement features, generate tests, and review code. I validate the output and remain responsible for architecture decisions and the resulting changes.',
   tools: [
     {
       name: 'Claude Code',
-      use: 'Agentic refactors, architecture exploration, and PR-ready changes across large codebases.',
+      use: 'Codebase exploration, implementation, refactoring, and test generation.',
     },
     {
       name: 'OpenCode',
-      use: 'Terminal-native agent for quick edits, scripting, and confident multi-file changes.',
+      use: 'Terminal-based implementation, scripting, and changes across multiple files.',
     },
     {
       name: 'Codex',
-      use: 'Fast scaffolding, boilerplate, and inline implementation during focused build sessions.',
+      use: 'Implementation planning, architecture analysis, code review, and verification.',
     },
   ],
-  principles: ['Human review on every change', 'Tests before merge', 'I own the architecture, not the autocomplete'],
+  principles: ['Review generated changes', 'Verify affected behavior', 'Own the technical decisions'],
 };
 
 export const experience = [
   {
     id: 1,
-    role: 'Senior Backend Developer',
+    role: 'Senior Full-Stack Developer',
     company: 'Yassir',
     location: 'Remote',
     period: 'Oct 2025 - Present',
     description: [
-      'Build and own Node.js microservices and system architecture for a high-traffic mobility platform.',
-      'Built an internal Next.js dashboard for real-time monitoring of one of our services, giving the team live visibility into its progress and data.',
-      'Raised code quality and release confidence by introducing unit tests, automation, and code reviews.',
-      'Translate product, design, and operations requirements into pragmatic backend solutions that ship, get observed, and iterate on schedule',
-      'Contribute to architecture and implementation planning for core platform services, balancing delivery pressure against long-term maintainability',
+      'Share ownership of critical mobility services across dispatch, location, and mapping within the Core team, covering delivery, reliability, and ongoing maintenance.',
+      'Guide engineers across teams on service integration and usage, and help shape technical decisions through RFCs that document requirements, design options, and tradeoffs.',
+      'Collaborate with another team to develop a new service, aligning its design with consumer needs and preparing for ongoing ownership by Core.',
+      'Redesigned dispatch pool joins to use atomic MongoDB updates, reducing concurrency conflicts and repeated database reads while preserving job consistency during concurrent requests.',
+      'Contributed to MongoDB query and index optimization, reducing one query’s execution time from 600 ms to 3 ms as measured in MongoDB Atlas. Worked with MongoDB’s team to right-size the cluster from M400 to M200, reducing cluster cost by 50%.',
+      'Built and extended an internal Next.js operations dashboard for inspecting dispatch behavior and managing dispatch strategies.',
+      'Improved service reliability and diagnostics through automated testing, fault handling, and changes to location-service shutdown and error logging.',
     ],
   },
   {
     id: 2,
-    role: 'Senior Fullstack Developer',
+    role: 'Senior Full-Stack Developer',
     company: 'InnovationTeam',
     location: 'Remote',
     period: 'Feb 2024 - Oct 2025',
     description: [
-      'Built responsive React and Next.js applications with server-side rendering for stronger SEO and performance, managing state with Redux and Context API.',
-      'Architected Node.js backend services with authentication, logging, request validation, and structured error handling, enabling the team to extend features with confidence',
-      'Integrated dotCMS as a headless CMS over GraphQL, decoupling editorial workflows from application releases.',
-      'Managed Dockerized deployments on AWS EC2 with autoscaling, improving release predictability and reducing downtime',
+      'Built React and Next.js applications with server-side rendering, using Redux and Context API for state management.',
+      'Developed Node.js backend services with authentication, request validation, structured logging, and error handling.',
+      'Integrated dotCMS as a headless CMS through GraphQL, allowing editorial content updates independently of application releases.',
+      'Managed Dockerized deployments on AWS EC2 with autoscaling, supporting application availability and release delivery.',
     ],
   },
   {
     id: 3,
-    role: 'Senior Fullstack Developer',
+    role: 'Senior Full-Stack Developer',
     company: 'Modeso',
     location: 'Cairo, Egypt',
     period: 'Sep 2023 - Feb 2024',
     description: [
-      'Upgraded production applications to current versions of TypeScript, React, Angular, and Node.js, modernizing state management across Redux, Zustand, and NgRx.',
-      'Introduced Storybook for React and Angular, improving component documentation, reusability, and test coverage across team',
-      'Built MongoDB-backed application flows supporting dynamic product requirements and fast iteration.',
-      'Mentored junior developers through code reviews, onboarding, and best-practice guidance.',
+      'Upgraded production applications across TypeScript, React, Angular, and Node.js, including state management with Redux, Zustand, and NgRx.',
+      'Introduced Storybook for React and Angular to document shared components and support reuse and testing.',
+      'Developed MongoDB-backed application workflows to support evolving product requirements.',
+      'Mentored junior engineers through onboarding, code reviews, and guidance on implementation and maintainability.',
     ],
   },
   {
     id: 4,
-    role: 'Fullstack Developer',
-    company: 'InnovationTeam / STC',
+    role: 'Full-Stack Developer',
+    company: 'InnovationTeam (Client assignment: STC)',
     location: 'Remote',
     period: 'Feb 2022 - Sep 2023',
     description: [
-      'Designed and built a team-management tool in TypeScript, Node.js, Angular, and React to track delivery progress and tasks',
+      'Designed and built an internal team-management and delivery dashboard using TypeScript, Node.js, Angular, and React.',
       'Integrated GitHub, Jira, and Slack to automate task tracking, branch retrieval, and build notifications.',
-      'Architected real-time notification and live-data features with Socket.io and Node.js, improving team coordination across web and mobile releases',
-      'Deployed and managed applications on AWS (Lambda, EC2, S3, Route53), optimizing cost and performance.',
+      'Implemented real-time notifications and live-data features using Socket.io and Node.js to support coordination across web and mobile releases.',
+      'Deployed and managed applications using AWS Lambda, EC2, S3, and Route53, handling hosting, storage, and domain configuration.',
     ],
   },
   {
     id: 5,
-    role: 'Fullstack Developer',
+    role: 'Full-Stack Developer',
     company: 'VOIS (Vodafone Intelligent Solutions)',
     location: 'Cairo, Egypt',
     period: 'Apr 2021 - Feb 2022',
     description: [
-      'Engineered responsive React and Angular interfaces for enterprise telecom workflows, ensuring performance, accessibility, and consistency',
-      'Improved maintainability and reduced regressions on shared UI with Jest and Angular Testing Library coverage.',
-      'Contributed reusable components to an internal UI library, cutting repeated implementation work across teams.',
-      'Collaborated in Agile ceremonies (sprint planning, retrospectives, daily stand-ups), keeping implementation aligned with delivery priorities.',
+      'Developed responsive React and Angular interfaces for enterprise telecom workflows, focusing on accessibility, performance, and consistent behavior.',
+      'Added Jest and Angular Testing Library coverage to verify shared interface behavior and guard against regressions.',
+      'Contributed reusable components to an internal UI library, reducing repeated implementation across teams.',
+      'Collaborated with the team through sprint planning, daily stand-ups, and retrospectives to align implementation with delivery priorities.',
     ],
   },
   {
     id: 6,
-    role: 'Fullstack Developer',
+    role: 'Full-Stack Developer',
     company: 'Codiles',
     location: 'Cairo, Egypt',
     period: 'Apr 2019 - Apr 2021',
     description: [
-      'Delivered full-stack applications with TypeScript, React, Node.js, Angular, MongoDB, and AWS (DynamoDB, EC2, S3), helping the company meet critical deadlines.',
-      'Built React Native and Expo framework mobile applications alongside web products.',
-      'Created real-time dashboards and chat with Node.js and Socket.io, using Redis for session management and caching.',
-      'Established CI/CD pipelines with AWS CodePipeline and GitHub Actions, automating build, test, and deployment cycles.',
+      'Delivered full-stack web applications using TypeScript, React, Angular, Node.js, MongoDB, and AWS services including DynamoDB, EC2, and S3.',
+      'Built mobile applications with React Native and Expo alongside web products.',
+      'Developed real-time dashboards and chat features using Node.js and Socket.io, with Redis for caching and session management.',
+      'Established CI/CD pipelines using AWS CodePipeline and GitHub Actions to automate build, test, and deployment workflows.',
     ],
   },
 ];
@@ -155,11 +159,12 @@ export const education = [
 export const projects = [
   {
     slug: 'yassir',
+    category: 'Professional',
     title: 'Yassir',
     description: 'Ride-hailing product work across backend services, delivery tooling, and platform operations.',
     contribution:
-      'Build and own Node.js microservices, system architecture, delivery tooling, and operational visibility for a mobility platform.',
-    outcome: 'Backend engineering for a regional mobility platform with microservice-scale delivery needs.',
+      'Share ownership of dispatch, location, and mapping services, guide cross-team integrations through RFCs, and build a Next.js operations dashboard. Redesigned pool joins with atomic MongoDB updates to reduce conflicts and repeated reads.',
+    outcome: 'Core mobility services and operations tooling. Contributed to query and index optimization that reduced one query from 600 ms to 3 ms in MongoDB Atlas, and cluster right-sizing from M400 to M200 that halved cluster cost.',
     tags: [
       'TypeScript ',
       ' JavaScript ',
@@ -189,7 +194,7 @@ export const projects = [
       ' JavaScript Frameworks ',
       ' Google Cloud Platform (GCP)',
     ],
-    displayTags: ['Node.js', 'Microservices', 'MongoDB', 'Redis', 'Docker', 'GCP'],
+    displayTags: ['TypeScript', 'NestJS', 'Next.js', 'MongoDB', 'Redis', 'Google Cloud'],
     image: '/images/yassir.svg',
     link: 'https://yassir.com/',
     linkLabel: 'Product site',
@@ -198,6 +203,7 @@ export const projects = [
   },
   {
     slug: 'go-social-api',
+    category: 'Personal',
     title: 'GO-Social-API',
     description:
       'A robust social networking API built with Go, featuring user authentication, post management, commenting system, follower relationships, and user feeds.',
@@ -214,6 +220,7 @@ export const projects = [
   },
   {
     slug: 'itba',
+    category: 'Professional',
     title: 'ITBA',
     description: 'Eco-tourism application for exploring North Reserve locations, wildlife, and culturally significant sites.',
     contribution:
@@ -224,10 +231,12 @@ export const projects = [
     image: '/images/itba.jpg',
     link: 'https://www.srfsh.com/',
     linkLabel: 'Visit site',
+    featured: false,
     github: '',
   },
   {
     slug: 'dental-axess',
+    category: 'Professional',
     title: 'Dental Axess',
     description: 'Digital dentistry product catalogue and workflow for treatment providers.',
     contribution:
@@ -238,10 +247,12 @@ export const projects = [
     image: '/images/xflow.png',
     link: 'https://dentalaxess.com/products/xflow/',
     linkLabel: 'Product page',
+    featured: false,
     github: '',
   },
   {
     slug: 'twint-super-deals',
+    category: 'Professional',
     title: 'Twint Super Deals',
     description: 'Deals experience for discounts and promotions available through the TWINT app.',
     contribution:
@@ -267,10 +278,12 @@ export const projects = [
     image: '/images/twint.svg',
     link: 'https://deals.twint.ch/',
     linkLabel: 'Product page',
+    featured: false,
     github: '',
   },
   {
     slug: 'rateel',
+    category: 'Professional',
     title: 'Rateel',
     description: 'Audio recognition app that identifies Quran reciters and the surah being recited.',
     contribution:
@@ -290,10 +303,12 @@ export const projects = [
     image: '/images/rateel.webp',
     link: 'https://play.google.com/store/apps/details?id=sa.com.stc.Rateel',
     linkLabel: 'App listing',
+    featured: false,
     github: '',
   },
   {
     slug: 'stc-dashboard',
+    category: 'Professional',
     title: 'STC Dashboard',
     description: 'Internal dashboard for mobile delivery progress, analytics, and test-team workflows.',
     contribution:
@@ -313,15 +328,17 @@ export const projects = [
     image: '',
     link: 'https://mcicd.com/login',
     linkLabel: 'Platform login',
+    featured: false,
     github: '',
   },
   {
     slug: 'saldwich',
+    category: 'Part-time freelance',
     title: 'Saldwich',
     description: 'Customer app and operations dashboard for restaurant branches, delivery, menus, and location-based orders.',
     contribution:
-      'Delivered product work across the customer app and operations dashboard using TypeScript, Node.js, React, React Native, DynamoDB, and AWS.',
-    outcome: 'Restaurant operations platform spanning customer app, dashboard, delivery, and menu management.',
+      'Contributed part-time freelance work to a React operations dashboard and Node.js backend, including subscription and order workflows, alongside full-time employment.',
+    outcome: 'Part-time freelance contribution to restaurant operations, subscriptions, and order management.',
     tags: [
       'TypeScript',
       'Node.js',
@@ -339,10 +356,12 @@ export const projects = [
     image: '/images/saldwich.png',
     link: 'https://dashboard.saldwich.com/login',
     linkLabel: 'Dashboard login',
+    featured: false,
     github: '',
   },
   {
     slug: 'vodafone-germany',
+    category: 'Professional',
     title: 'Vodafone Germany',
     description: 'Customer-facing web delivery for Vodafone Germany.',
     contribution:
@@ -353,8 +372,10 @@ export const projects = [
     image: '/images/vodafone.png',
     link: 'https://www.vodafone.de/',
     linkLabel: 'Visit site',
+    featured: false,
     github: '',
   },
+  ...additionalProjects,
 ];
 
 export const services = [
@@ -382,7 +403,7 @@ export const services = [
     id: 4,
     title: 'Raise engineering quality',
     description:
-      'Strengthen codebases through architecture reviews, mentoring, test strategy, and practical delivery tradeoffs.',
+      'Guide cross-team service integrations, document technical tradeoffs through RFCs, and strengthen delivery through code reviews, testing, and mentoring.',
     icon: 'users',
   },
 ];

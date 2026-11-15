@@ -3,19 +3,26 @@ import Link from 'next/link';
 
 import Footer from '@/components/Footer';
 import InteriorHeader from '@/components/InteriorHeader';
-import { cvUrl, education, experience, skills } from '@/data/content';
+import { cvUrl, education, experience, projects, skills } from '@/data/content';
 import { siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} Resume | ${siteConfig.title}`,
   description:
-    'Experience, education, and technical capabilities for Hassan Mohamed, a senior backend-focused full-stack engineer based in Egypt and working remotely.',
+    'Experience, education, and technical capabilities for Hassan Mohamed, a senior full-stack engineer based in Egypt and working remotely.',
   alternates: {
     canonical: '/resume',
   },
 };
 
 const capabilityGroups = Object.values(skills);
+const projectGroups = [
+  { category: 'Part-time freelance', title: 'Part-time freelance projects' },
+  { category: 'Personal', title: 'Personal projects' },
+].map((group) => ({
+  ...group,
+  projects: projects.filter((project) => project.category === group.category),
+}));
 
 export default function ResumePage() {
   return (
@@ -31,7 +38,7 @@ export default function ResumePage() {
                 <span className="block text-[var(--primary)]">in full.</span>
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-9 text-[var(--muted-strong)]">
-                A backend-leaning full-stack path across mobility, telecom, marketplace, SaaS, and customer products.
+                A full-stack path across mobility, telecom, marketplace, SaaS, and customer products.
               </p>
             </div>
             <a
@@ -75,6 +82,24 @@ export default function ResumePage() {
             </div>
           </div>
         </section>
+
+        {projectGroups.map((group) => (
+          <section key={group.category} className="px-4 py-16 sm:px-6" aria-label={group.title}>
+            <div className="mx-auto max-w-6xl">
+              <h2 className="font-display text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">{group.title}</h2>
+              <div className="mt-10 divide-y divide-[var(--border)] border-y border-[var(--border)]">
+                {group.projects.map((project) => (
+                  <article key={project.slug} className="grid gap-4 py-7 lg:grid-cols-[0.85fr_1.15fr]">
+                    <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">
+                      <Link href={`/work/${project.slug}`} className="hover:text-[var(--primary)]">{project.title}</Link>
+                    </h3>
+                    <p className="max-w-2xl text-sm leading-7 text-[var(--muted-strong)]">{project.contribution}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
 
         <section className="px-4 py-24 sm:px-6" aria-labelledby="capabilities-heading">
           <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[0.7fr_1.3fr]">

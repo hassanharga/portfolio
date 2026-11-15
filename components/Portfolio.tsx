@@ -7,7 +7,14 @@ import { projects } from '@/data/content';
 import { revealUp, staggerContainer } from './animations';
 
 const featuredProjects = projects.filter((project) => project.featured);
-const additionalProjects = projects.filter((project) => !project.featured);
+const projectGroups = [
+  { category: 'Professional', title: 'More professional work', description: 'Selected client and internal products' },
+  { category: 'Part-time freelance', title: 'Part-time freelance projects', description: 'Selected engagements alongside full-time employment' },
+  { category: 'Personal', title: 'Personal projects', description: 'Independent engineering projects and tools' },
+].map((group) => ({
+  ...group,
+  projects: projects.filter((project) => !project.featured && project.category === group.category),
+}));
 
 export default function Portfolio() {
   return (
@@ -22,10 +29,10 @@ export default function Portfolio() {
         >
           <div>
             <p className="mb-3 text-sm uppercase tracking-[0.18em] text-[var(--primary)]">Selected work</p>
-            <h2 className="font-display text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">Proof over templates</h2>
+            <h2 className="font-display text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">Selected engineering work</h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-[var(--muted-strong)] lg:pt-10">
-            A focused sample of product and platform work across mobility, telecom, tourism, commerce, and backend API design.
+            Professional product work, part-time client engagements, and personal projects across frontend applications, backend services, and developer tooling.
           </p>
         </motion.div>
 
@@ -70,7 +77,7 @@ export default function Portfolio() {
                     <h3 className="font-display text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
                       <Link href={`/work/${project.slug}`}>{project.title}</Link>
                     </h3>
-                    <span className="shrink-0 rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--accent)]">Featured</span>
+                    <span className="shrink-0 rounded-full border border-[var(--border)] px-3 py-1 text-xs text-[var(--accent)]">{project.category}</span>
                   </div>
 
                   <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{project.description}</p>
@@ -122,73 +129,74 @@ export default function Portfolio() {
           })}
         </motion.div>
 
-        <motion.div
-          variants={revealUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-80px' }}
-          className="mt-20"
-        >
-          <div className="mb-6 flex items-end justify-between gap-6">
-            <h3 className="font-display text-2xl font-semibold text-[var(--foreground)] sm:text-3xl">More product work</h3>
-            <p className="hidden text-sm text-[var(--muted)] sm:block">Selected client and internal products</p>
-          </div>
+        {projectGroups.map((group) => (
+          <motion.div
+            key={group.category}
+            variants={revealUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            className="mt-20"
+          >
+            <div className="mb-6 flex items-end justify-between gap-6">
+              <h3 className="font-display text-2xl font-semibold text-[var(--foreground)] sm:text-3xl">{group.title}</h3>
+              <p className="hidden text-sm text-[var(--muted)] sm:block">{group.description}</p>
+            </div>
 
-          <div className="border-y border-[var(--border)]">
-            {additionalProjects.map((project, index) => {
-              const tags = project.displayTags ?? project.tags.slice(0, 4);
+            <div className="border-y border-[var(--border)]">
+              {group.projects.map((project, index) => {
+                const tags = project.displayTags ?? project.tags.slice(0, 4);
 
-              return (
-                <article
-                  key={project.title}
-                  className="group grid gap-5 border-b border-[var(--border)] py-7 last:border-b-0 md:grid-cols-[7rem_1fr_auto] md:items-center md:gap-8"
-                >
-                  <div className="relative h-24 overflow-hidden rounded-md border border-[var(--border)] bg-[var(--background-raised)]">
-                    {project.image ? (
-                      <Image
-                        src={project.image}
-                        fill
-                        alt=""
-                        sizes="112px"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      />
-                    ) : (
-                      <div className="font-display flex h-full items-center justify-center text-sm text-[var(--muted)]">
-                        {String(index + 1).padStart(2, '0')}
-                      </div>
-                    )}
-                  </div>
-
-                  <div>
-                    <h4 className="font-display text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
-                      <Link href={`/work/${project.slug}`}>{project.title}</Link>
-                    </h4>
-                    <p className="mt-2 max-w-2xl text-sm leading-7 text-[var(--muted)]">{project.description}</p>
-                    <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
-                      {tags.slice(0, 4).map((tag) => (
-                        <span key={tag} className="text-xs text-[var(--muted-strong)]">
-                          {tag.trim()}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-self-start gap-2 rounded-md text-sm font-medium text-[var(--primary)] transition-colors hover:text-[var(--accent)] md:justify-self-end"
+                return (
+                  <article
+                    key={project.title}
+                    className="group grid gap-5 border-b border-[var(--border)] py-7 last:border-b-0 md:grid-cols-[7rem_1fr_auto] md:items-center md:gap-8"
                   >
-                    {project.linkLabel ?? 'Open project'}
-                    <svg aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </a>
-                </article>
-              );
-            })}
-          </div>
-        </motion.div>
+                    <div className="relative h-24 overflow-hidden rounded-md border border-[var(--border)] bg-[var(--background-raised)]">
+                      {project.image ? (
+                        <Image
+                          src={project.image}
+                          fill
+                          alt=""
+                          sizes="112px"
+                          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        />
+                      ) : (
+                        <div className="font-display flex h-full items-center justify-center text-sm text-[var(--muted)]">
+                          {String(index + 1).padStart(2, '0')}
+                        </div>
+                      )}
+                    </div>
+
+                    <div>
+                      <h4 className="font-display text-xl font-semibold text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
+                        <Link href={`/work/${project.slug}`}>{project.title}</Link>
+                      </h4>
+                      <p className="mt-2 max-w-2xl text-sm leading-7 text-[var(--muted)]">{project.description}</p>
+                      <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
+                        {tags.slice(0, 4).map((tag) => (
+                          <span key={tag} className="text-xs text-[var(--muted-strong)]">
+                            {tag.trim()}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <Link
+                      href={`/work/${project.slug}`}
+                      className="inline-flex items-center justify-self-start gap-2 rounded-md text-sm font-medium text-[var(--primary)] transition-colors hover:text-[var(--accent)] md:justify-self-end"
+                    >
+                      View contribution
+                      <svg aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </Link>
+                  </article>
+                );
+              })}
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

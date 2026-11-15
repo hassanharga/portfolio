@@ -23,7 +23,7 @@ export default function Hero() {
             <span className="relative flex h-2 w-2">
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--success)]" />
             </span>
-            Available for senior full stack and backend roles
+            Available for senior frontend, backend, and full-stack roles
           </motion.span>
 
           <motion.h1
@@ -111,7 +111,7 @@ export default function Hero() {
             />
             <div className="border-t border-[var(--border)] bg-[var(--background-raised)] p-5">
               <p className="text-sm uppercase tracking-[0.18em] text-[var(--muted)]">Current focus</p>
-              <p className="mt-2 text-lg font-medium text-[var(--foreground)]">Backend systems and product delivery</p>
+              <p className="mt-2 text-lg font-medium text-[var(--foreground)]">Frontend applications, backend services, and product delivery</p>
             </div>
           </div>
         </motion.div>

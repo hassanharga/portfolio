@@ -1,27 +1,29 @@
 # Hassan Mohamed
 
-> Senior Full Stack Developer building web products and backend systems. Egypt-based, working remotely.
+> Senior Full-Stack Engineer building web products and backend systems. Egypt-based, working remotely.
 
 ## About
 
-Hassan Mohamed is a senior full stack engineer specializing in Node.js, React, Next.js, Angular, and Go. He has shipped production systems across marketplace, telecom, mobility, and SaaS products. His strongest areas are backend architecture, APIs, cloud deployments, and the integration work that turns product ideas into shipped software.
+Hassan Mohamed is a senior full-stack engineer working with React, Next.js, Angular, TypeScript, Node.js, and NestJS. He has shipped production systems across marketplace, telecom, mobility, and SaaS products. He shares ownership of critical mobility services, guides cross-team integrations, and contributes to RFC-based technical decisions.
 
 ## Skills
 
-- **Product engineering**: React, Next.js, Angular, React Native, TypeScript
-- **Backend systems**: Node.js, Nest.js, Express.js, Go, Microservices
-- **Data & infrastructure**: PostgreSQL, MongoDB, Redis, DynamoDB, Docker, AWS, GCP, CI/CD
-- **Engineering leadership**: Code reviews, unit testing, architecture, mentoring, agile delivery
-- **AI-augmented workflow**: Claude Code, OpenCode, Codex, AI code review, spec-to-PR, test generation
+- **Product engineering**: React, Next.js, Angular, React Native, TypeScript, Redux, React Query, Tailwind CSS, Storybook
+- **Backend systems**: Node.js, NestJS, Express, Go, REST APIs, GraphQL, BullMQ, Google Cloud Pub/Sub
+- **Data & infrastructure**: PostgreSQL, MongoDB, Redis, DynamoDB, SQLite, Prisma, Docker, AWS, Google Cloud, CI/CD
+- **Engineering leadership**: Code reviews, automated testing, domain-driven design, hexagonal architecture, RFCs, mentoring, cross-team delivery
+- **AI-augmented workflow**: Claude Code, OpenCode, Codex, implementation planning, codebase exploration, test generation, code review
 
 ## Experience
 
-- **Senior Backend Developer** at Yassir (Oct 2025 - Present) — Building Node.js microservices for a high-traffic mobility platform
-- **Senior Fullstack Developer** at InnovationTeam (Feb 2024 - Oct 2025) — React/Next.js applications with Node.js backend services, dotCMS headless CMS, Dockerized AWS deployments
-- **Senior Fullstack Developer** at Modeso (Sep 2023 - Feb 2024) — TypeScript, React, Angular, Node.js modernization; introduced Storybook
-- **Fullstack Developer** at InnovationTeam / STC (Feb 2022 - Sep 2023) — Team-management tool with GitHub/Jira/Slack integrations, real-time features
-- **Fullstack Developer** at VOIS (Apr 2021 - Feb 2022) — React and Angular interfaces for enterprise telecom, Jest testing
-- **Fullstack Developer** at Codiles (Apr 2019 - Apr 2021) — Full-stack TypeScript/React/Node.js applications, React Native mobile apps, CI/CD pipelines
+- **Senior Full-Stack Developer** at Yassir (Oct 2025 - Present) — Core-team ownership of dispatch, location, and mapping services; RFCs, cross-team guidance, atomic MongoDB pool joins, and a Next.js operations dashboard
+- **Senior Full-Stack Developer** at InnovationTeam (Feb 2024 - Oct 2025) — React/Next.js applications with Node.js backend services, dotCMS headless CMS, Dockerized AWS deployments
+- **Senior Full-Stack Developer** at Modeso (Sep 2023 - Feb 2024) — TypeScript, React, Angular, Node.js modernization; introduced Storybook
+- **Full-Stack Developer** at InnovationTeam / STC (Feb 2022 - Sep 2023) — Team-management tool with GitHub/Jira/Slack integrations, real-time features
+- **Full-Stack Developer** at VOIS (Apr 2021 - Feb 2022) — React and Angular interfaces for enterprise telecom, Jest testing
+- **Full-Stack Developer** at Codiles (Apr 2019 - Apr 2021) — Full-stack TypeScript/React/Node.js applications, React Native mobile apps, CI/CD pipelines
+
+MongoDB work at Yassir: contributed to query and index optimization reducing one query from 600 ms to 3 ms in MongoDB Atlas, and worked with MongoDB’s team to right-size the cluster from M400 to M200, reducing cluster cost by 50%.
 
 ## Education
 
@@ -35,6 +37,19 @@ Hassan Mohamed is a senior full stack engineer specializing in Node.js, React, N
 - [ITBA](https://www.srfsh.com/) — Eco-tourism application (React, Next.js, Node.js, TypeScript, Azure)
 - [Dental Axess](https://dentalaxess.com/products/xflow/) — Digital dentistry platform (Angular, Node.js, MongoDB, TypeScript, Docker)
 - [Twint Super Deals](https://deals.twint.ch/) — Deals platform (Node.js, MongoDB, RabbitMQ, Angular, GCP, Docker)
+
+## Part-time Freelance Projects
+
+These engagements were undertaken alongside full-time employment.
+
+- [Saldwich](https://hassanharga.vercel.app/work/saldwich): React operations dashboard and Node.js subscription and order workflows.
+- [Jeel](https://hassanharga.vercel.app/work/jeel): NestJS application and discount workflows with Prisma and PostgreSQL.
+- [Payout](https://hassanharga.vercel.app/work/payout): React and NestJS contractor management, bulk uploads, and DynamoDB integration.
+
+## Personal Projects
+
+- [AI Agent Workspace](https://hassanharga.vercel.app/work/ai-agent-workspace): Local Next.js session-history browsing and recorded usage reporting with SQLite. Managed agent execution is not yet validated.
+- [Go Social API](https://hassanharga.vercel.app/work/go-social-api): Go API with authentication, posts, comments, follows, PostgreSQL, and Redis.
 
 ## Contact
 
@@ -64,3 +79,7 @@ Hassan Mohamed is a senior full stack engineer specializing in Node.js, React, N
 - [STC Dashboard](https://hassanharga.vercel.app/work/stc-dashboard)
 - [Saldwich](https://hassanharga.vercel.app/work/saldwich)
 - [Vodafone Germany](https://hassanharga.vercel.app/work/vodafone-germany)
+
+- [Jeel](https://hassanharga.vercel.app/work/jeel)
+- [Payout](https://hassanharga.vercel.app/work/payout)
+- [AI Agent Workspace](https://hassanharga.vercel.app/work/ai-agent-workspace)

@@ -64,7 +64,7 @@ export default function Contact() {
             <h2 className="font-display text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">Start a focused conversation</h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-[var(--muted-strong)] lg:pt-10">
-            Best fit: senior full stack, backend-heavy product work, architecture support, and practical delivery leadership.
+            Best fit: senior frontend, backend, and full-stack roles, service architecture, and cross-team delivery.
           </p>
         </motion.div>
 

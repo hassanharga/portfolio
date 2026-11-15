@@ -9,7 +9,7 @@ import { siteConfig } from '@/data/site';
 export const metadata: Metadata = {
   title: `About ${siteConfig.name} | ${siteConfig.positioning}`,
   description:
-    'Profile of Hassan Mohamed, an Egypt-based senior backend-focused full-stack engineer working with Node.js, TypeScript, React, Next.js, and Go.',
+    'Profile of Hassan Mohamed, an Egypt-based senior full-stack engineer working with Node.js, TypeScript, React, Next.js, and Go.',
   alternates: {
     canonical: '/about',
   },
@@ -20,7 +20,7 @@ const capabilityGroups = Object.values(skills);
 const profileDetails = [
   {
     label: 'Primary focus',
-    value: 'Node.js services, APIs, microservices, and product architecture',
+    value: 'React and Next.js applications, Node.js services, APIs, and product architecture',
   },
   {
     label: 'Full-stack range',
@@ -66,8 +66,8 @@ export default function AboutPage() {
             <div>
               <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[var(--primary)]">About Hassan</p>
               <h1 className="font-display max-w-4xl text-5xl font-semibold leading-[1.02] text-[var(--foreground)] sm:text-6xl lg:text-7xl">
-                Backend depth,
-                <span className="block text-[var(--primary)]">full-stack range.</span>
+                Frontend craft,
+                <span className="block text-[var(--primary)]">backend depth.</span>
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-9 text-[var(--muted-strong)]">
                 {heroContent.bio}
@@ -143,7 +143,7 @@ export default function AboutPage() {
             <div>
               <p className="text-sm uppercase tracking-[0.18em] text-[var(--primary)]">Current availability</p>
               <h2 className="font-display mt-3 text-3xl font-semibold text-[var(--foreground)]">
-                Open to senior backend and full-stack conversations.
+                Open to senior frontend, backend, and full-stack conversations.
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-8 text-[var(--muted-strong)]">
                 Based in {contact.location} and working remotely. The fastest route is a focused message about the role, team, and product problem.

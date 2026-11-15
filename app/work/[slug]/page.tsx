@@ -70,7 +70,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     },
     keywords: tags.join(', '),
     image: project.image ? `${siteConfig.url}${project.image}` : undefined,
-    sameAs: project.link,
+    sameAs: project.link || undefined,
   };
 
   return (
@@ -92,7 +92,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 >
                   Back to selected work
                 </Link>
-                <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[var(--muted)]">Project profile</p>
+                <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[var(--muted)]">{project.category} project</p>
                 <h1 className="font-display text-5xl font-semibold leading-[1.02] text-[var(--foreground)] sm:text-6xl lg:text-7xl">
                   {project.title}
                 </h1>
@@ -114,7 +114,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </div>
               ) : (
                 <div className="rounded-3xl border border-[var(--border-strong)] bg-[var(--surface)] p-8 sm:p-10">
-                  <p className="text-sm uppercase tracking-[0.18em] text-[var(--primary)]">Internal platform</p>
+                  <p className="text-sm uppercase tracking-[0.18em] text-[var(--primary)]">{project.category} project</p>
                   <p className="font-display mt-6 text-3xl font-semibold text-[var(--foreground)]">{project.title}</p>
                   <p className="mt-4 text-sm leading-7 text-[var(--muted)]">
                     Public project details are limited to the work already described in this portfolio.
@@ -175,18 +175,20 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <div>
                 <p className="text-sm uppercase tracking-[0.18em] text-[var(--primary)]">Continue</p>
                 <p className="font-display mt-3 max-w-2xl text-3xl font-semibold text-[var(--foreground)]">
-                  Review the source or product, then see the wider engineering path.
+                  Explore more work and the wider engineering path.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 lg:justify-end">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-lg bg-[var(--primary)] px-6 py-3 font-medium text-[var(--background)] transition-colors hover:bg-[var(--accent)]"
-                >
-                  {project.linkLabel}
-                </a>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg bg-[var(--primary)] px-6 py-3 font-medium text-[var(--background)] transition-colors hover:bg-[var(--accent)]"
+                  >
+                    {project.linkLabel}
+                  </a>
+                )}
                 <Link
                   href="/resume"
                   className="rounded-lg border border-[var(--border-strong)] px-6 py-3 font-medium text-[var(--foreground)] transition-colors hover:border-[var(--primary)] hover:text-[var(--primary)]"

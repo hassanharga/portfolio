@@ -10,7 +10,7 @@ export default function Footer() {
           <p className="text-sm text-[var(--muted)]">
             © {currentYear} {heroContent.name}.
           </p>
-          <p className="text-xs text-[var(--muted)]">Senior Full Stack Developer</p>
+          <p className="text-xs text-[var(--muted)]">Senior Full-Stack Engineer</p>
         </div>
       </div>
     </footer>
