@@ -4,7 +4,7 @@ export const cvUrl = 'https://flowcv.com/resume/q851s66nns';
 
 export const heroContent = {
   name: 'Hassan Mohamed',
-  title: 'Senior Full-Stack Engineer | React, Next.js, Node.js & TypeScript',
+  title: 'Senior Full-Stack Engineer | Node.js, React, Next.js & TypeScript',
   bio: 'Senior full-stack engineer with 7+ years building web applications and backend services across mobility, telecom, marketplace, and SaaS. I work with React, Next.js, TypeScript, Node.js, and NestJS, share ownership of critical mobility services, and guide cross-team integrations and RFC-based technical decisions.',
   proofPoints: ['Frontend applications', 'Backend services', 'Cross-team delivery'],
 };
@@ -344,7 +344,7 @@ export const projects = [
     tags: [
       'TypeScript',
       'Node.js',
-      'React.js',
+      'React',
       'Amazon Dynamodb',
       'JavaScript',
       'NoSQL',
