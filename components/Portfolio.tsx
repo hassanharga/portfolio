@@ -9,7 +9,7 @@ import { revealUp, staggerContainer } from './animations';
 const featuredProjects = projects.filter((project) => project.featured);
 const projectGroups = [
   { category: 'Professional', title: 'More professional work', description: 'Selected client and internal products' },
-  { category: 'Part-time freelance', title: 'Part-time freelance projects', description: 'Selected engagements alongside full-time employment' },
+  { category: 'Part-time freelance', title: 'Part-time freelance projects', description: 'Selected part-time client engagements' },
   { category: 'Personal', title: 'Personal projects', description: 'Independent engineering projects and tools' },
 ].map((group) => ({
   ...group,

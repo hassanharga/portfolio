@@ -28,7 +28,7 @@ const profileDetails = [
   },
   {
     label: 'Product contexts',
-    value: 'Mobility, telecom, marketplace, SaaS, and customer products',
+    value: 'Mobility, telecom, healthcare, and tourism',
   },
   {
     label: 'Working model',

@@ -20,7 +20,7 @@ export default function Resume() {
             <h2 className="font-display text-3xl font-semibold text-[var(--foreground)] sm:text-5xl">Experience across the stack</h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-[var(--muted-strong)] lg:pt-10">
-            A full-stack path across startups, agencies, telecom, and marketplace products.
+            A full-stack path across mobility, telecom, healthcare, and tourism.
           </p>
         </motion.div>
 

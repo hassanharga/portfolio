@@ -38,7 +38,7 @@ export default function ResumePage() {
                 <span className="block text-[var(--primary)]">in full.</span>
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-9 text-[var(--muted-strong)]">
-                A full-stack path across mobility, telecom, marketplace, SaaS, and customer products.
+                A full-stack path across mobility, telecom, healthcare, and tourism.
               </p>
             </div>
             <a
