@@ -85,7 +85,8 @@ Selected part-time freelance engagements.
 
 ## Personal Projects
 
-- [AI Agent Workspace](https://hassanharga.vercel.app/work/ai-agent-workspace): Local Next.js session-history browsing and recorded usage reporting with SQLite.
+- [My Progress](https://hassanharga.vercel.app/work/my-progress): Next.js and TypeScript app for project tasks, work-session tracking, and rich-text notes, using PostgreSQL and Prisma.
+- [Skill Forge](https://hassanharga.vercel.app/work/skill-forge): Personal practice lab for test-driven development and refactoring with TypeScript, React, Node.js, and Vitest.
 - [Go Social API](https://hassanharga.vercel.app/work/go-social-api): Go API with authentication, posts, comments, follows, PostgreSQL, and Redis.
 
 ## Contact
@@ -119,4 +120,5 @@ Selected part-time freelance engagements.
 
 - [Jeel](https://hassanharga.vercel.app/work/jeel)
 - [Payout](https://hassanharga.vercel.app/work/payout)
-- [AI Agent Workspace](https://hassanharga.vercel.app/work/ai-agent-workspace)
+- [My Progress](https://hassanharga.vercel.app/work/my-progress)
+- [Skill Forge](https://hassanharga.vercel.app/work/skill-forge)

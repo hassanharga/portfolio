@@ -21,7 +21,10 @@ const projectGroups = [
   { category: 'Personal', title: 'Personal projects' },
 ].map((group) => ({
   ...group,
-  projects: projects.filter((project) => project.category === group.category),
+  projects: projects.filter(
+    (project) => project.category === group.category
+      && !('portfolioOnly' in project && project.portfolioOnly),
+  ),
 }));
 
 export default function ResumePage() {
